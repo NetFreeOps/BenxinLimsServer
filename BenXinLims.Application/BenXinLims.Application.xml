@@ -4,6 +4,18 @@
         <name>BenXinLims.Application</name>
     </assembly>
     <members>
+        <member name="T:BenXinLims.Application.sampleServices">
+            <summary>
+            样品服务
+            </summary>
+        </member>
+        <member name="M:BenXinLims.Application.sampleServices.loginSample(System.String)">
+            <summary>
+            登记样品
+            </summary>
+            <param name="sample_number"></param>
+            <returns></returns>
+        </member>
         <member name="T:BenXinLims.Application.SystemAppService">
             <summary>
             系统服务接口
