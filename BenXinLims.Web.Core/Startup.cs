@@ -1,4 +1,6 @@
-﻿using Furion;
+﻿using BenXinLims.Core.Job;
+using Furion;
+using Furion.Schedule;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
@@ -12,6 +14,15 @@ namespace BenXinLims.Web.Core
         {
             services.AddConsoleFormatter();
             services.AddJwt<JwtHandler>();
+
+            //注册后台服务
+            services.AddSchedule(options =>
+            {
+
+                options.AddJob<DingDingTokenJob>("钉钉Token获取作业", Triggers.Hourly());
+               
+
+            });
 
             services.AddCorsAccessor();
 
@@ -34,6 +45,8 @@ namespace BenXinLims.Web.Core
 
             app.UseAuthentication();
             app.UseAuthorization();
+
+            app.UseScheduleUI();
 
             app.UseInject(string.Empty);
 

@@ -4,6 +4,21 @@
         <name>BenXinLims.Core</name>
     </assembly>
     <members>
+        <member name="F:BenXinLims.Core.CONST.CacheConst.SYS_PREFIX">
+            <summary>
+            缓存前缀
+            </summary>
+        </member>
+        <member name="F:BenXinLims.Core.CONST.CacheConst.SYS_ONLINE_USER_LIST">
+            <summary>
+            在线用户列表前缀
+            </summary>
+        </member>
+        <member name="F:BenXinLims.Core.CONST.CacheConst.SYS_SYSTEM_INFO">
+            <summary>
+            系统信息前缀
+            </summary>
+        </member>
         <member name="T:BenXinLims.Core.DbContext">
             <summary>
             数据库上下文对象
