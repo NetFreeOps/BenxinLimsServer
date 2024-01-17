@@ -55,6 +55,16 @@
         {
             return Task.FromResult("updateSampleStatus");
         }
+        // 为样品添加分析
+        public Task<string> addTestToSample(string sample_number)
+        {
+            return Task.FromResult("addTestToSample");
+        }
+        // 为样品删除分析
+        public Task<string> deleteTestFromSample(string sample_number)
+        {
+            return Task.FromResult("deleteTestFromSample");
+        }
 
 
     }
