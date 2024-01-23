@@ -1,10 +1,16 @@
 import { defaultTheme, defineUserConfig } from 'vuepress'
+import { viteBundler } from '@vuepress/bundler-vite'
+
 
 export default defineUserConfig({
   lang: 'zh-CN',
   title: '本心LIMS',
   description: '一个小型LIMS',
   base:'/BenxinLimsServer/tree/main/BenXinLims.Docs/',
+  bundler: viteBundler({
+    viteOptions: {},
+    vuePluginOptions: {},
+  }),
   theme: defaultTheme({
     sidebarDepth: 3,
     logo: '/logo.png',
