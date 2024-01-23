@@ -4,7 +4,7 @@ export default defineUserConfig({
   lang: 'zh-CN',
   title: '本心LIMS',
   description: '一个小型LIMS',
-
+base:'BenxinLimsServer/tree/main/BenXinLims.Docs'
   theme: defaultTheme({
     sidebarDepth: 3,
     logo: '/logo.png',
