@@ -26,19 +26,19 @@ jobs:
           run_install: true
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v3
         with:
           # 选择要使用的 node 版本
           node-version: 18
           # 缓存 pnpm 依赖
           # cache: pnpm
       - name: install dep
-        run: pnpm install
+        run: yarn install && yarn upgrade
         working-directory: ./BenXinLims.Docs
 
       # 运行构建脚本
       - name: Build VuePress site
-        run: pnpm build
+        run: yarn build
         working-directory: ./BenXinLims.Docs
 
       # 查看 workflow 的文档来获取更多信息
