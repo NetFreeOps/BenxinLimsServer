@@ -9,7 +9,13 @@ export default defineUserConfig({
   description: '一个小型LIMS',
   base:'/BenxinLimsServer/tree/main/BenXinLims.Docs/',
   bundler: viteBundler({
-    viteOptions: {},
+    viteOptions: {
+      build: {
+        rollupOptions: {
+          external: ['vue']  
+        }
+      }
+    },
     vuePluginOptions: {},
   }),
   theme: defaultTheme({
