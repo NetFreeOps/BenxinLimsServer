@@ -12,7 +12,7 @@ export default defineUserConfig({
     viteOptions: {
       build: {
         rollupOptions: {
-          external: ['vue']  
+          external: ['vue', 'vue/server-renderer']  
         }
       }
     },
