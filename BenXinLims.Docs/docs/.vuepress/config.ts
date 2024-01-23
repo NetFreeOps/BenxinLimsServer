@@ -1,6 +1,5 @@
 import { defaultTheme, defineUserConfig } from 'vuepress'
 import { viteBundler } from '@vuepress/bundler-vite'
-import { webpackBundler } from '@vuepress/bundler-webpack'
 
 
 
@@ -9,10 +8,10 @@ export default defineUserConfig({
   title: '本心LIMS',
   description: '一个小型LIMS',
   base:'/BenxinLimsServer/tree/main/BenXinLims.Docs/',
-  // specify bundler via environment variable
-  bundler:
-    process.env.DOCS_BUNDLER === 'webpack' ? webpackBundler() : viteBundler(),
-    
+  bundler: viteBundler({
+    viteOptions: {},
+    vuePluginOptions: {},
+  }),
   theme: defaultTheme({
     sidebarDepth: 3,
     logo: '/logo.png',
