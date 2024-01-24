@@ -7,7 +7,7 @@ export default defineUserConfig({
   lang: 'zh-CN',
   title: '本心LIMS',
   description: '一个小型LIMS',
-  base:'/BenxinLimsServer/tree/main/BenXinLims.Docs/',
+  base:'/BenxinLimsServer/',
   bundler: viteBundler({
     viteOptions: {
       build: {
