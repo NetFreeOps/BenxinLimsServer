@@ -23,27 +23,27 @@ export default defineUserConfig({
     logo: '/logo.png',
     home: '/',
     repo: 'https://github.com/NetFreeOps/BenxinLimsServer',
-    navbar: [{ text: "首页", link: "/" }, { text: "文档", link: "/function-system/sampleFunction.md" }],
+    navbar: [{ text: "首页", link: "/" }, { text: "文档", link: "/function-system/sampleFunction" }],
     sidebar: [
       {
         text: "系统引导",
         link: '/guide/',
         children: [
-          { text: "系统介绍", link: "/guide/introduction.md" },
-          { text: "快速开始", link: "/guide/quickStart.md" },
-          { text: "数据库配置", link: "/guide/dbConfig.md" },
-          { text: "缓存配置", link: "/guide/cacheConfig.md" },]
+          { text: "系统介绍", link: "/guide/introduction" },
+          { text: "快速开始", link: "/guide/quickStart" },
+          { text: "数据库配置", link: "/guide/dbConfig" },
+          { text: "缓存配置", link: "/guide/cacheConfig" },]
       },
       {
         text: "内置函数",
         link: '/function-system/',
         children: [
-          { text: "样品函数", link: "/function-system/sampleFunction.md" },
-          { text: "检测函数", link: "/function-system/testFunction.md" },
-          { text: "结果函数", link: "/function-system/resultFunction.md" },
-          { text: "分析方法函数", link: "/function-system/analysisFunction.md" },
-          { text: "设备函数", link: "/function-system/instrumentFunction.md" },
-          { text: "人员函数", link: "/function-system/userFunction.md" }]
+          { text: "样品函数", link: "/function-system/sampleFunction" },
+          { text: "检测函数", link: "/function-system/testFunction" },
+          { text: "结果函数", link: "/function-system/resultFunction" },
+          { text: "分析方法函数", link: "/function-system/analysisFunction" },
+          { text: "设备函数", link: "/function-system/instrumentFunction" },
+          { text: "人员函数", link: "/function-system/userFunction" }]
 
       }
     ]
