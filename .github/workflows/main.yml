@@ -33,7 +33,7 @@ jobs:
           # 缓存 pnpm 依赖
           # cache: pnpm
       - name: install dep
-        run: yarn install && yarn upgrade
+        run: yarn install 
         working-directory: ./BenXinLims.Docs
 
       # 运行构建脚本
