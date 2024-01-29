@@ -27,7 +27,7 @@ export default defineUserConfig({
     sidebar: [
       {
         text: "系统引导",
-        link: '/guide/',
+        link: '/guide/introduction',
         children: [
           { text: "系统介绍", link: "/guide/introduction" },
           { text: "快速开始", link: "/guide/quickStart" },
@@ -35,8 +35,14 @@ export default defineUserConfig({
           { text: "缓存配置", link: "/guide/cacheConfig" },]
       },
       {
+        text: "功能梳理",
+        link:'/function-sorting/login-function',
+        children:[
+          {text:"登录流程",link:"/function-sorting/login-function"}]
+      },
+      {
         text: "内置函数",
-        link: '/function-system/',
+        link: '/function-system/sampleFunction',
         children: [
           { text: "样品函数", link: "/function-system/sampleFunction" },
           { text: "检测函数", link: "/function-system/testFunction" },
@@ -45,6 +51,13 @@ export default defineUserConfig({
           { text: "设备函数", link: "/function-system/instrumentFunction" },
           { text: "人员函数", link: "/function-system/userFunction" }]
 
+      },{
+        text:'日志系统',
+        link:'/log-system/description',
+        children:[
+          {text:'日志介绍',link:'/log-system/description'},
+          {text:'日志记录',link:'/log-system/logRecord'}
+        ]
       }
     ]
   })
