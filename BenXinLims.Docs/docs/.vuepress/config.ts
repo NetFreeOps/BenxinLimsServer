@@ -20,7 +20,7 @@ export default defineUserConfig({
   }),
   theme: defaultTheme({
     sidebarDepth: 3,
-    logo: '/logo.png',
+    logo: '/images/logo.png',
     home: '/',
     repo: 'https://github.com/NetFreeOps/BenxinLimsServer',
     navbar: [{ text: "首页", link: "/" }, { text: "文档", link: "/function-system/sampleFunction" }],
