@@ -1,5 +1,10 @@
 # BenxinLimsServer
 
+## 文档地址
+
+
+[本心LIMS]([https://markdown.com.cn](https://netfreeops.github.io/BenxinLimsServer/))
+
 ## 各种表
 > #### 样品表
 > #### 样品模板表
