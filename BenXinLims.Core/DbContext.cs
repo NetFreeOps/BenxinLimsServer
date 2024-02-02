@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Furion;
 using SqlSugar;
 
@@ -18,6 +19,24 @@ namespace BenXinLims.Core
             , db =>
             {
                 // 这里配置全局事件，比如拦截执行 SQL
+                db.Ado.CommandTimeOut = 30;
+                db.Aop.OnLogExecuting = (sql, pars) =>
+                {
+                    if (sql.StartsWith("SELECT"))
+                    {
+                        Console.ForegroundColor = ConsoleColor.Green;
+                    }
+                    if (sql.StartsWith("UPDATE") || sql.StartsWith("INSERT"))
+                    {
+                        Console.ForegroundColor = ConsoleColor.White;
+                    }
+                    if (sql.StartsWith("DELETE"))
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                    }
+                    Console.WriteLine("sql:" + "\r\n\r\n" + UtilMethods.GetSqlString(db.CurrentConnectionConfig.DbType, sql, pars));
+                    App.PrintToMiniProfiler("SqlSugar", "Info", UtilMethods.GetSqlString(db.CurrentConnectionConfig.DbType, sql, pars));
+                };
             });
     }
 }

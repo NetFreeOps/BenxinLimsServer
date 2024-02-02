@@ -1,4 +1,6 @@
-﻿using Furion.DynamicApiController;
+﻿using BenXinLims.Core.Entry;
+using Furion.DataEncryption;
+using Furion.DynamicApiController;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,9 +15,22 @@ namespace BenXinLims.Core.Services
     public class sysAuthService:IDynamicApiController
     {
         // web登录
-        public Task<string> webLogin(string username,string password)
+        public Task<string> webLogin(string userid,string password)
         {
-            return Task.FromResult("webLogin");
+            var db = DbContext.Instance;
+            var user = db.Queryable<sysUserEntry>().Where(x => x.UserId == userid).First();
+            if (user == null)
+            {
+                return Task.FromResult("用户不存在");
+            }
+            // MD5加密
+            var en_password = MD5Encryption.Encrypt(password);
+            if (user.Password != en_password)
+            {
+                return Task.FromResult("密码错误");
+            }
+
+            return Task.FromResult("success");
         }
         // app登录
         public Task<string> appLogin(string username, string password)

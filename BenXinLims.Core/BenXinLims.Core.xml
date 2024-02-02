@@ -29,5 +29,115 @@
             SqlSugar 数据库实例
             </summary>
         </member>
+        <member name="P:BenXinLims.Core.Entry.dbEntryBase.CreateUser">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.dbEntryBase.CreateTime">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.dbEntryBase.ChangeUser">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.dbEntryBase.ChangeTime">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.dbEntryBase.Deleted">
+             <summary>
+             0为未删除，1为已删除 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.dbEntryBase.DataId">
+            <summary>
+            数据权限
+            </summary>
+        </member>
+        <member name="T:BenXinLims.Core.Entry.sysUserConfigEntry">
+             <summary>
+             用户配置表
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.sysUserConfigEntry.Id">
+             <summary>
+             主键 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.sysUserConfigEntry.UserId">
+             <summary>
+             用户工号，关联sys_user 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.sysUserConfigEntry.ConfigType">
+             <summary>
+             配置类型 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.sysUserConfigEntry.ConfigField">
+             <summary>
+             配置字段名 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.sysUserConfigEntry.ConfigValue">
+             <summary>
+             配置字段值 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.sysUserConfigEntry.Status">
+             <summary>
+             状态 
+            </summary>
+        </member>
+        <member name="T:BenXinLims.Core.Entry.sysUserEntry">
+             <summary>
+             系统用户表
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.sysUserEntry.Id">
+             <summary>
+             自增主键 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.sysUserEntry.UserId">
+             <summary>
+             用户ID,六位数,从100000开始 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.sysUserEntry.UserName">
+             <summary>
+             用户姓名 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.sysUserEntry.UserGroup">
+             <summary>
+             用户组，默认default 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.sysUserEntry.Avatar">
+             <summary>
+             头像地址 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.sysUserEntry.Password">
+             <summary>
+             加密后密码 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.sysUserEntry.Status">
+             <summary>
+             用户状态：在职、长假、产假、离职、调走 
+            </summary>
+        </member>
+        <member name="T:BenXinLims.Core.Services.sysAuthService">
+            <summary>
+            认证服务
+            </summary>
+        </member>
     </members>
 </doc>
