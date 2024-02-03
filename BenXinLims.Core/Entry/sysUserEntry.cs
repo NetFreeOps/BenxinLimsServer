@@ -34,6 +34,11 @@ namespace BenXinLims.Core.Entry
         [SugarColumn(ColumnName = "user_group")]
         public string UserGroup { get; set; }
         /// <summary>
+        /// 用户类型 
+        ///</summary>
+        [SugarColumn(ColumnName = "user_type")]
+        public string UserType { get; set; }
+        /// <summary>
         /// 头像地址 
         ///</summary>
         [SugarColumn(ColumnName = "avatar")]
@@ -44,10 +49,20 @@ namespace BenXinLims.Core.Entry
         [SugarColumn(ColumnName = "password")]
         public string Password { get; set; }
         /// <summary>
+        /// 最后登录地址 
+        ///</summary>
+        [SugarColumn(ColumnName = "last_login_ip")]
+        public string LastLoginIp { get; set; }
+        /// <summary>
+        /// 最后登录时间 
+        ///</summary>
+        [SugarColumn(ColumnName = "last_login_time")]
+        public DateTime? LastLoginTime { get; set; }
+        /// <summary>
         /// 用户状态：在职、长假、产假、离职、调走 
         ///</summary>
         [SugarColumn(ColumnName = "status")]
         public string Status { get; set; }
-       
+
     }
 }
