@@ -49,6 +49,11 @@ namespace BenXinLims.Core.Entry
         [SugarColumn(ColumnName = "password")]
         public string Password { get; set; }
         /// <summary>
+        /// 单点登录密码 
+        ///</summary>
+        [SugarColumn(ColumnName = "sso")]
+        public string Sso { get; set; }
+        /// <summary>
         /// 最后登录地址 
         ///</summary>
         [SugarColumn(ColumnName = "last_login_ip")]
@@ -64,5 +69,29 @@ namespace BenXinLims.Core.Entry
         [SugarColumn(ColumnName = "status")]
         public string Status { get; set; }
 
+    }
+
+    /// <summary>
+    /// 登录实体类
+    /// </summary>
+    public class sysLoginModel
+    {
+        public string UserId { get; set; }
+        public string PassWord { get; set; }
+    }
+
+    /// <summary>
+    /// 用户查询实体类
+    /// </summary>
+    public class sysUserQueryEntry
+    {
+        public string UserId { get; set; }
+        public string UserName { get; set; }
+        public string UserGroup { get; set; }
+        public string UserType { get; set; }
+        public string Avatar { get; set; }
+        public string LastLoginIp { get; set; }
+        public DateTime? LastLoginTime { get; set; }
+        public string Status { get; set; }
     }
 }

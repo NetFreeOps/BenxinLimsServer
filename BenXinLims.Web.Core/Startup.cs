@@ -1,4 +1,5 @@
-﻿using BenXinLims.Core.Job;
+﻿using BenXinLims.Core.EventBus;
+using BenXinLims.Core.Job;
 using Furion;
 using Furion.Schedule;
 using Microsoft.AspNetCore.Builder;
@@ -23,6 +24,9 @@ namespace BenXinLims.Web.Core
                
 
             });
+
+            // 事件总线服务
+            services.AddEventBus(builder => { builder.AddSubscriber<LogEventSubscriber>(); });
 
             services.AddCorsAccessor();
 
