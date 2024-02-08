@@ -120,9 +120,24 @@ namespace BenXinLims.Core.Services
             }
         }
         // 查询用户角色列表
-        public Task<string> getUserRoles(string username)
+        public Task<string> getUserRoles(string userid)
         {
             return Task.FromResult("getUserRoles");
+        }
+        // 返回用户权限，进入系统
+        public Task<string> getUserPermission(string userid,string roleid)
+        {
+            var db = DbContext.Instance;
+            // 验证用户是否具有该角色
+
+            // 查询角色菜单权限
+
+            // 查询角色按钮权限
+
+            // 查询角色数据权限
+
+
+            return Task.FromResult("getUserPermission");
         }
         // app登录
         public Task<string> appLogin(string username, string password)
