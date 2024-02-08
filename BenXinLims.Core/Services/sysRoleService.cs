@@ -47,5 +47,56 @@ namespace BenXinLims.Core.Services
             var db = DbContext.Instance;
             return await db.Queryable<sysRoleDataEntry>().Where(it => it.RoleId == roleId).ToListAsync();
         }
+
+        //添加角色
+        public async Task<int> addRole(sysRolesEntry role)
+        {
+            var db = DbContext.Instance;
+            // 角色代码不能重复
+            var count = await db.Queryable<sysRolesEntry>().Where(it => it.RoleCode == role.RoleCode).CountAsync();
+            if (count > 0)
+            {
+                throw Oops.Oh("角色代码已存在");
+            }
+            return await db.Insertable(role).ExecuteCommandAsync();
+        }
+        //修改角色
+        public async Task<int> updateRole(sysRolesEntry role)
+        {
+            var db = DbContext.Instance;
+            // 角色代码不能重复
+            var count = await db.Queryable<sysRolesEntry>().Where(it => it.RoleCode == role.RoleCode && it.Id != role.Id).CountAsync();
+            if (count > 0)
+            {
+                throw Oops.Oh("角色代码已存在");
+            }
+            return await db.Updateable(role).ExecuteCommandAsync();
+        }
+        //删除角色
+        public async Task<int> deleteRole(int roleId)
+        {
+            var db = DbContext.Instance;
+            return await db.Updateable<sysRolesEntry>().SetColumns(it => new sysRolesEntry { Deleted = "1" }).Where(it => it.Id == roleId).ExecuteCommandAsync();
+        }
+        //添加角色菜单
+        public async Task<int> addRoleMenu(sysRoleMenuEntry roleMenu)
+        {
+           // 开启事务，删除原有角色菜单，添加新菜单，关闭事务
+                       var db = DbContext.Instance;
+            var result = 0;
+            db.Ado.BeginTran();
+            try
+            {
+                await db.Deleteable<sysRoleMenuEntry>().Where(it => it.RoleId == roleMenu.RoleId).ExecuteCommandAsync();
+                result = await db.Insertable(roleMenu).ExecuteCommandAsync();
+                db.Ado.CommitTran();
+            }
+            catch (Exception ex)
+            {
+                db.Ado.RollbackTran();
+                throw ex;
+            }
+            return result;
+        }
     }
 }
