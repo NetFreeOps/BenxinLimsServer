@@ -69,6 +69,26 @@
             /JWT模型
             </summary>
         </member>
+        <member name="T:BenXinLims.Core.Entry.syRoleButtonEntry">
+             <summary>
+             
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.syRoleButtonEntry.Id">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.syRoleButtonEntry.RoleId">
+             <summary>
+             岗位ID 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.syRoleButtonEntry.ButtonId">
+             <summary>
+              
+            </summary>
+        </member>
         <member name="T:BenXinLims.Core.Entry.SysLoginLogEntry">
              <summary>
              
@@ -135,6 +155,66 @@
             </summary>
         </member>
         <member name="P:BenXinLims.Core.Entry.SysLoginLogEntry.DataId">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="T:BenXinLims.Core.Entry.sysRoleDataEntry">
+             <summary>
+             
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.sysRoleDataEntry.Id">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.sysRoleDataEntry.RoleId">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.sysRoleDataEntry.DataId">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="T:BenXinLims.Core.Entry.sysRoleMenuEntry">
+             <summary>
+             
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.sysRoleMenuEntry.Id">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.sysRoleMenuEntry.RoleId">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.sysRoleMenuEntry.MenuId">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="T:BenXinLims.Core.Entry.sysRolesEntry">
+             <summary>
+             
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.sysRolesEntry.Id">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.sysRolesEntry.RoleCode">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.sysRolesEntry.RoleName">
              <summary>
               
             </summary>
@@ -244,6 +324,26 @@
             用户查询实体类
             </summary>
         </member>
+        <member name="T:BenXinLims.Core.Entry.sysUserRoleEntry">
+             <summary>
+             
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.sysUserRoleEntry.Id">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.sysUserRoleEntry.UserId">
+             <summary>
+             采用用户工号 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.sysUserRoleEntry.RoleId">
+             <summary>
+              
+            </summary>
+        </member>
         <member name="F:BenXinLims.Core.Enum.ErrorCode.D1000">
             <summary>
             用户名或密码错误
@@ -279,6 +379,35 @@
             <summary>
             认证服务
             </summary>
+        </member>
+        <member name="T:BenXinLims.Core.Services.sysDynamicSubService">
+            <summary>
+            动态接口服务
+            </summary>
+        </member>
+        <member name="M:BenXinLims.Core.Services.sysDynamicSubService.Compile(System.String,System.String)">
+            <summary>
+            动态添加 WebAPI/Controller
+            </summary>
+            <param name="csharpCode"></param>
+            <param name="assemblyName">可自行指定程序集名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Core.Services.sysDynamicSubService.Remove(System.String)">
+            <summary>
+            移除动态程序集 WebAPI/Controller
+            </summary>
+        </member>
+        <member name="T:BenXinLims.Core.Services.sysRoleService">
+            <summary>
+            角色服务
+            </summary>
+        </member>
+        <member name="M:BenXinLims.Core.Services.sysRoleService.getRoleList">
+            <summary>
+            获取所有角色
+            </summary>
+            <returns></returns>
         </member>
     </members>
 </doc>
