@@ -32,7 +32,11 @@ namespace BenXinLims.Core.Services
             _redisCache = redisCache;
 
         }
-        // web登录
+       /// <summary>
+       /// web登录
+       /// </summary>
+       /// <param name="user"></param>
+       /// <returns></returns>
         public async Task<authEntry> webLogin(sysLoginModel user)
         {
             var db = DbContext.Instance;
@@ -119,12 +123,21 @@ namespace BenXinLims.Core.Services
 
             }
         }
-        // 查询用户角色列表
+        /// <summary>
+        /// 查询用户角色列表
+        /// </summary>
+        /// <param name="userid"></param>
+        /// <returns></returns>
         public Task<string> getUserRoles(string userid)
         {
             return Task.FromResult("getUserRoles");
         }
-        // 返回用户权限，进入系统
+        /// <summary>
+        /// 返回用户权限
+        /// </summary>
+        /// <param name="userid"></param>
+        /// <param name="roleid"></param>
+        /// <returns></returns>
         public Task<string> getUserPermission(string userid,string roleid)
         {
             var db = DbContext.Instance;
@@ -139,32 +152,60 @@ namespace BenXinLims.Core.Services
 
             return Task.FromResult("getUserPermission");
         }
-        // app登录
+        /// <summary>
+        /// APP登录
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
         public Task<string> appLogin(string username, string password)
         {
             return Task.FromResult("appLogin");
         }
-        // 微信登录
+        /// <summary>
+        /// 微信登录
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
         public Task<string> wechatLogin(string username, string password)
         {
             return Task.FromResult("wechatLogin");
         }
-        // 钉钉登录
+        /// <summary>
+        /// 钉钉登录
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
         public Task<string> dingdingLogin(string username, string password)
         {
             return Task.FromResult("dingdingLogin");
         }
-        // 第三方API对接登录
+        /// <summary>
+        /// 第三方API登录
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
         public Task<string> apiLogin(string username, string password)
         {
             return Task.FromResult("apiLogin");
         }
-        // web登出
+        /// <summary>
+        /// web登出
+        /// </summary>
+        /// <param name="username"></param>
+        /// <returns></returns>
         public Task<string> webLogout(string username)
         {
             return Task.FromResult("webLogout");
         }
-        // app登出
+        /// <summary>
+        /// app登出
+        /// </summary>
+        /// <param name="username"></param>
+        /// <returns></returns>
         public Task<string> appLogout(string username)
         {
             return Task.FromResult("appLogout");

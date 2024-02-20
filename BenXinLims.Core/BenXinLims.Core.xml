@@ -380,6 +380,74 @@
             认证服务
             </summary>
         </member>
+        <member name="M:BenXinLims.Core.Services.sysAuthService.webLogin(BenXinLims.Core.Entry.sysLoginModel)">
+            <summary>
+            web登录
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Core.Services.sysAuthService.getUserRoles(System.String)">
+            <summary>
+            查询用户角色列表
+            </summary>
+            <param name="userid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Core.Services.sysAuthService.getUserPermission(System.String,System.String)">
+            <summary>
+            返回用户权限
+            </summary>
+            <param name="userid"></param>
+            <param name="roleid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Core.Services.sysAuthService.appLogin(System.String,System.String)">
+            <summary>
+            APP登录
+            </summary>
+            <param name="username"></param>
+            <param name="password"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Core.Services.sysAuthService.wechatLogin(System.String,System.String)">
+            <summary>
+            微信登录
+            </summary>
+            <param name="username"></param>
+            <param name="password"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Core.Services.sysAuthService.dingdingLogin(System.String,System.String)">
+            <summary>
+            钉钉登录
+            </summary>
+            <param name="username"></param>
+            <param name="password"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Core.Services.sysAuthService.apiLogin(System.String,System.String)">
+            <summary>
+            第三方API登录
+            </summary>
+            <param name="username"></param>
+            <param name="password"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Core.Services.sysAuthService.webLogout(System.String)">
+            <summary>
+            web登出
+            </summary>
+            <param name="username"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Core.Services.sysAuthService.appLogout(System.String)">
+            <summary>
+            app登出
+            </summary>
+            <param name="username"></param>
+            <returns></returns>
+        </member>
         <member name="T:BenXinLims.Core.Services.sysDynamicSubService">
             <summary>
             动态接口服务
