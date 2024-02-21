@@ -38,7 +38,10 @@ export default defineUserConfig({
         text: "功能梳理",
         link:'/function-sorting/login-function',
         children:[
-          {text:"登录流程",link:"/function-sorting/login-function"}]
+          {text:"登录流程",link:"/function-sorting/login-function"},
+          {text:"任务管理",link:"/task-manager/taskAssignment"}
+
+        ]
       },
       {
         text: "内置函数",
