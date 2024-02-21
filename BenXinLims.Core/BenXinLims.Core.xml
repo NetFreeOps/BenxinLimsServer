@@ -29,6 +29,11 @@
             SqlSugar 数据库实例
             </summary>
         </member>
+        <member name="T:BenXinLims.Core.Entry.authEntry">
+            <summary>
+            登录实体类
+            </summary>
+        </member>
         <member name="P:BenXinLims.Core.Entry.dbEntryBase.CreateUser">
              <summary>
               
@@ -57,6 +62,161 @@
         <member name="P:BenXinLims.Core.Entry.dbEntryBase.DataId">
             <summary>
             数据权限
+            </summary>
+        </member>
+        <member name="T:BenXinLims.Core.Entry.jwtEntry">
+            <summary>
+            /JWT模型
+            </summary>
+        </member>
+        <member name="T:BenXinLims.Core.Entry.syRoleButtonEntry">
+             <summary>
+             
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.syRoleButtonEntry.Id">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.syRoleButtonEntry.RoleId">
+             <summary>
+             岗位ID 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.syRoleButtonEntry.ButtonId">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="T:BenXinLims.Core.Entry.SysLoginLogEntry">
+             <summary>
+             
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.SysLoginLogEntry.Id">
+             <summary>
+             主键 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.SysLoginLogEntry.Userid">
+             <summary>
+             用户id,取工号 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.SysLoginLogEntry.Username">
+             <summary>
+             用户姓名 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.SysLoginLogEntry.Success">
+             <summary>
+             是否登录成功，成功为1 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.SysLoginLogEntry.Message">
+             <summary>
+             登录消息 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.SysLoginLogEntry.Ip">
+             <summary>
+             ip地址 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.SysLoginLogEntry.Location">
+             <summary>
+             登录位置 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.SysLoginLogEntry.Browser">
+             <summary>
+             浏览器 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.SysLoginLogEntry.Os">
+             <summary>
+             系统 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.SysLoginLogEntry.VisType">
+             <summary>
+             登录类型 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.SysLoginLogEntry.VisTime">
+             <summary>
+             登录时间 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.SysLoginLogEntry.Deleted">
+             <summary>
+             0为未删除，1为已删除 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.SysLoginLogEntry.DataId">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="T:BenXinLims.Core.Entry.sysRoleDataEntry">
+             <summary>
+             
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.sysRoleDataEntry.Id">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.sysRoleDataEntry.RoleId">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.sysRoleDataEntry.DataId">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="T:BenXinLims.Core.Entry.sysRoleMenuEntry">
+             <summary>
+             
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.sysRoleMenuEntry.Id">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.sysRoleMenuEntry.RoleId">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.sysRoleMenuEntry.MenuId">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="T:BenXinLims.Core.Entry.sysRolesEntry">
+             <summary>
+             
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.sysRolesEntry.Id">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.sysRolesEntry.RoleCode">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.sysRolesEntry.RoleName">
+             <summary>
+              
             </summary>
         </member>
         <member name="T:BenXinLims.Core.Entry.sysUserConfigEntry">
@@ -119,6 +279,11 @@
              用户组，默认default 
             </summary>
         </member>
+        <member name="P:BenXinLims.Core.Entry.sysUserEntry.UserType">
+             <summary>
+             用户类型 
+            </summary>
+        </member>
         <member name="P:BenXinLims.Core.Entry.sysUserEntry.Avatar">
              <summary>
              头像地址 
@@ -129,15 +294,188 @@
              加密后密码 
             </summary>
         </member>
+        <member name="P:BenXinLims.Core.Entry.sysUserEntry.Sso">
+             <summary>
+             单点登录密码 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.sysUserEntry.LastLoginIp">
+             <summary>
+             最后登录地址 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.sysUserEntry.LastLoginTime">
+             <summary>
+             最后登录时间 
+            </summary>
+        </member>
         <member name="P:BenXinLims.Core.Entry.sysUserEntry.Status">
              <summary>
              用户状态：在职、长假、产假、离职、调走 
             </summary>
         </member>
+        <member name="T:BenXinLims.Core.Entry.sysLoginModel">
+            <summary>
+            登录实体类
+            </summary>
+        </member>
+        <member name="T:BenXinLims.Core.Entry.sysUserQueryEntry">
+            <summary>
+            用户查询实体类
+            </summary>
+        </member>
+        <member name="T:BenXinLims.Core.Entry.sysUserRoleEntry">
+             <summary>
+             
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.sysUserRoleEntry.Id">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.sysUserRoleEntry.UserId">
+             <summary>
+             采用用户工号 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.sysUserRoleEntry.RoleId">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="F:BenXinLims.Core.Enum.ErrorCode.D1000">
+            <summary>
+            用户名或密码错误
+            </summary>
+        </member>
+        <member name="F:BenXinLims.Core.Enum.ErrorCode.D1001">
+            <summary>
+            服务器错误
+            </summary>
+        </member>
+        <member name="F:BenXinLims.Core.Enum.ErrorCode.D1002">
+            <summary>
+            数据库错误
+            </summary>
+        </member>
+        <member name="F:BenXinLims.Core.Enum.ErrorCode.D1003">
+            <summary>
+            字段不全
+            </summary>
+        </member>
+        <member name="F:BenXinLims.Core.Enum.ErrorCode.D1004">
+            <summary>
+            没有权限
+            </summary>
+        </member>
+        <member name="F:BenXinLims.Core.Enum.ErrorCode.D1007">
+            <summary>
+            类型错误
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:BenXinLims.Core.EventBus.LogEventSubscriber.HandleEventAsync(Furion.EventBus.EventHandlerContext)" -->
         <member name="T:BenXinLims.Core.Services.sysAuthService">
             <summary>
             认证服务
             </summary>
+        </member>
+        <member name="M:BenXinLims.Core.Services.sysAuthService.webLogin(BenXinLims.Core.Entry.sysLoginModel)">
+            <summary>
+            web登录
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Core.Services.sysAuthService.getUserRoles(System.String)">
+            <summary>
+            查询用户角色列表
+            </summary>
+            <param name="userid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Core.Services.sysAuthService.getUserPermission(System.String,System.String)">
+            <summary>
+            返回用户权限
+            </summary>
+            <param name="userid"></param>
+            <param name="roleid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Core.Services.sysAuthService.appLogin(System.String,System.String)">
+            <summary>
+            APP登录
+            </summary>
+            <param name="username"></param>
+            <param name="password"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Core.Services.sysAuthService.wechatLogin(System.String,System.String)">
+            <summary>
+            微信登录
+            </summary>
+            <param name="username"></param>
+            <param name="password"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Core.Services.sysAuthService.dingdingLogin(System.String,System.String)">
+            <summary>
+            钉钉登录
+            </summary>
+            <param name="username"></param>
+            <param name="password"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Core.Services.sysAuthService.apiLogin(System.String,System.String)">
+            <summary>
+            第三方API登录
+            </summary>
+            <param name="username"></param>
+            <param name="password"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Core.Services.sysAuthService.webLogout(System.String)">
+            <summary>
+            web登出
+            </summary>
+            <param name="username"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Core.Services.sysAuthService.appLogout(System.String)">
+            <summary>
+            app登出
+            </summary>
+            <param name="username"></param>
+            <returns></returns>
+        </member>
+        <member name="T:BenXinLims.Core.Services.sysDynamicSubService">
+            <summary>
+            动态接口服务
+            </summary>
+        </member>
+        <member name="M:BenXinLims.Core.Services.sysDynamicSubService.Compile(System.String,System.String)">
+            <summary>
+            动态添加 WebAPI/Controller
+            </summary>
+            <param name="csharpCode"></param>
+            <param name="assemblyName">可自行指定程序集名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Core.Services.sysDynamicSubService.Remove(System.String)">
+            <summary>
+            移除动态程序集 WebAPI/Controller
+            </summary>
+        </member>
+        <member name="T:BenXinLims.Core.Services.sysRoleService">
+            <summary>
+            角色服务
+            </summary>
+        </member>
+        <member name="M:BenXinLims.Core.Services.sysRoleService.getRoleList">
+            <summary>
+            获取所有角色
+            </summary>
+            <returns></returns>
         </member>
     </members>
 </doc>
