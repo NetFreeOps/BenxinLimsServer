@@ -477,5 +477,61 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:BenXinLims.Core.Services.sysRoleService.getUserRole(System.Int32)">
+            <summary>
+            获取用户角色
+            </summary>
+            <param name="userId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Core.Services.sysRoleService.getRoleMenu(System.Int32)">
+            <summary>
+            获取角色菜单
+            </summary>
+            <param name="roleId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Core.Services.sysRoleService.getRoleButton(System.Int32)">
+            <summary>
+            获取角色按钮
+            </summary>
+            <param name="roleId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Core.Services.sysRoleService.getRoleData(System.Int32)">
+            <summary>
+            获取角色数据权限
+            </summary>
+            <param name="roleId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Core.Services.sysRoleService.addRole(BenXinLims.Core.Entry.sysRolesEntry)">
+            <summary>
+            添加角色
+            </summary>
+            <param name="role"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Core.Services.sysRoleService.updateRole(BenXinLims.Core.Entry.sysRolesEntry)">
+            <summary>
+            修改角色
+            </summary>
+            <param name="role"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Core.Services.sysRoleService.deleteRole(System.Int32)">
+            <summary>
+            删除角色
+            </summary>
+            <param name="roleId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Core.Services.sysRoleService.addRoleMenu(BenXinLims.Core.Entry.sysRoleMenuEntry)">
+            <summary>
+            添加角色菜单
+            </summary>
+            <param name="roleMenu"></param>
+            <returns></returns>
+        </member>
     </members>
 </doc>

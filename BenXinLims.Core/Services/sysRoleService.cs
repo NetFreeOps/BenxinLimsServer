@@ -22,33 +22,58 @@ namespace BenXinLims.Core.Services
             var db = DbContext.Instance;
             return await db.Queryable<sysRolesEntry>().Where(it => it.Deleted == "0").ToListAsync();
         }
-        // 获取用户具有的角色
-        public async Task<List<sysUserRoleEntry>> getUserRole(int userId)
+        /// <summary>
+        /// 获取用户角色
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns></returns>
+        public async Task<List<sysRolesEntry>> getUserRole(int userId)
         {
             var db = DbContext.Instance;
-            return await db.Queryable<sysUserRoleEntry>().Where(it => it.UserId == userId).ToListAsync();
+            var result = await db.Queryable<sysRolesEntry>()
+                .LeftJoin<sysUserRoleEntry>((r, ur) => r.Id == ur.RoleId && ur.UserId == userId)
+                .Select<sysRolesEntry>()
+                .ToListAsync();
+
+            return result;
         }
 
-        // 获取角色菜单
+        /// <summary>
+        /// 获取角色菜单
+        /// </summary>
+        /// <param name="roleId"></param>
+        /// <returns></returns>
         public async Task<List<sysRoleMenuEntry>> getRoleMenu(int roleId)
         {
             var db = DbContext.Instance;
             return await db.Queryable<sysRoleMenuEntry>().Where(it => it.RoleId == roleId).ToListAsync();
         }
-        // 获取角色按钮
+        /// <summary>
+        /// 获取角色按钮
+        /// </summary>
+        /// <param name="roleId"></param>
+        /// <returns></returns>
         public async Task<List<syRoleButtonEntry>> getRoleButton(int roleId)
         {
             var db = DbContext.Instance;
             return await db.Queryable<syRoleButtonEntry>().Where(it => it.RoleId == roleId).ToListAsync();
         }
-        // 获取角色数据权限
+        /// <summary>
+        /// 获取角色数据权限
+        /// </summary>
+        /// <param name="roleId"></param>
+        /// <returns></returns>
         public async Task<List<sysRoleDataEntry>> getRoleData(int roleId)
         {
             var db = DbContext.Instance;
             return await db.Queryable<sysRoleDataEntry>().Where(it => it.RoleId == roleId).ToListAsync();
         }
 
-        //添加角色
+        /// <summary>
+        /// 添加角色
+        /// </summary>
+        /// <param name="role"></param>
+        /// <returns></returns>
         public async Task<int> addRole(sysRolesEntry role)
         {
             var db = DbContext.Instance;
@@ -60,7 +85,11 @@ namespace BenXinLims.Core.Services
             }
             return await db.Insertable(role).ExecuteCommandAsync();
         }
-        //修改角色
+        /// <summary>
+        /// 修改角色
+        /// </summary>
+        /// <param name="role"></param>
+        /// <returns></returns>
         public async Task<int> updateRole(sysRolesEntry role)
         {
             var db = DbContext.Instance;
@@ -72,13 +101,21 @@ namespace BenXinLims.Core.Services
             }
             return await db.Updateable(role).ExecuteCommandAsync();
         }
-        //删除角色
+        /// <summary>
+        /// 删除角色
+        /// </summary>
+        /// <param name="roleId"></param>
+        /// <returns></returns>
         public async Task<int> deleteRole(int roleId)
         {
             var db = DbContext.Instance;
             return await db.Updateable<sysRolesEntry>().SetColumns(it => new sysRolesEntry { Deleted = "1" }).Where(it => it.Id == roleId).ExecuteCommandAsync();
         }
-        //添加角色菜单
+        /// <summary>
+        /// 添加角色菜单
+        /// </summary>
+        /// <param name="roleMenu"></param>
+        /// <returns></returns>
         public async Task<int> addRoleMenu(sysRoleMenuEntry roleMenu)
         {
            // 开启事务，删除原有角色菜单，添加新菜单，关闭事务
