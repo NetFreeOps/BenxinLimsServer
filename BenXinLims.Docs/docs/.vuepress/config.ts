@@ -39,8 +39,8 @@ export default defineUserConfig({
         link:'/function-sorting/login-function',
         children:[
           {text:"登录流程",link:"/function-sorting/login-function"},
-          {text:"任务管理",link:"/task-manager/taskAssignment"}
-
+          {text:"任务管理",link:"/task-manager/taskAssignment"},
+          {text:"工作流管理",link:"/work-flow/guide"}
         ]
       },
       {
