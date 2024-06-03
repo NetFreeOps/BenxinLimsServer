@@ -131,7 +131,7 @@ namespace BenXinLims.Core.Services
             catch (Exception ex)
             {
                 db.Ado.RollbackTran();
-                throw ex;
+                throw ;
             }
             return result;
         }

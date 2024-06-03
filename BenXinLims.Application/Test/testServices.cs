@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace BenXinLims.Application.Test
 {
+    /// <summary>
+    /// 检测服务
+    /// </summary>
     public class testServices:IDynamicApiController,ITransient
     {
         // 建立新检测

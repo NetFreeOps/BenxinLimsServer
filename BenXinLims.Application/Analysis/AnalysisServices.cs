@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace BenXinLims.Application.Analysis
 {
+    /// <summary>
+    /// 分析服务
+    /// </summary>
     public class AnalysisServices:IDynamicApiController,ITransient
     {
         // 建立新分析

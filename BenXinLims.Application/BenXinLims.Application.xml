@@ -4,6 +4,11 @@
         <name>BenXinLims.Application</name>
     </assembly>
     <members>
+        <member name="T:BenXinLims.Application.Analysis.AnalysisServices">
+            <summary>
+            分析服务
+            </summary>
+        </member>
         <member name="T:BenXinLims.Application.sampleServices">
             <summary>
             样品服务
@@ -26,6 +31,11 @@
             获取系统描述
             </summary>
             <returns></returns>
+        </member>
+        <member name="T:BenXinLims.Application.Test.testServices">
+            <summary>
+            检测服务
+            </summary>
         </member>
     </members>
 </doc>
