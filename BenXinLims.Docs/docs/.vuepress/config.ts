@@ -61,6 +61,13 @@ export default defineUserConfig({
           {text:'日志介绍',link:'/log-system/description'},
           {text:'日志记录',link:'/log-system/logRecord'}
         ]
+      },{
+        text:'数据库文档',
+        link:'/database/tables',
+        children:[
+          {text:'列表',link:'/database/lims-list'},
+          {text:'列表项',link:'/database/lims-list-item'}
+        ]
       }
     ]
   })
