@@ -69,6 +69,21 @@
             /JWT模型
             </summary>
         </member>
+        <member name="P:BenXinLims.Core.Entry.PageEntityBase.PageIndex">
+            <summary>
+            当前页码
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.PageEntityBase.PageSize">
+            <summary>
+            每页数据数
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.PageEntityBase.total">
+            <summary>
+            数据总数
+            </summary>
+        </member>
         <member name="T:BenXinLims.Core.Entry.syRoleButtonEntry">
              <summary>
              
@@ -342,6 +357,31 @@
         <member name="P:BenXinLims.Core.Entry.sysUserRoleEntry.RoleId">
              <summary>
               
+            </summary>
+        </member>
+        <member name="T:BenXinLims.Core.Entry.SysUserWorkflow">
+             <summary>
+             
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.SysUserWorkflow.Id">
+             <summary>
+             主键 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.SysUserWorkflow.Userid">
+             <summary>
+             用户ID 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.SysUserWorkflow.ConfigJosn">
+             <summary>
+             配置JSON文件 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.SysUserWorkflow.ConfigStatus">
+             <summary>
+             配置状态（-1待发布，0禁用，1启用 
             </summary>
         </member>
         <member name="F:BenXinLims.Core.Enum.ErrorCode.D1000">

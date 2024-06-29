@@ -9,6 +9,115 @@
             分析服务
             </summary>
         </member>
+        <member name="T:BenXinLims.Application.List.LimsListEntry">
+             <summary>
+             列表管理，等同于字典管理
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.List.LimsListEntry.Id">
+             <summary>
+             主键 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.List.LimsListEntry.Name">
+             <summary>
+             列表名称 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.List.LimsListEntry.Description">
+             <summary>
+             列表描述 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.List.LimsListEntry.ListType">
+             <summary>
+             列表分类 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.List.LimsListEntry.GroupName">
+             <summary>
+             组名 
+            </summary>
+        </member>
+        <member name="T:BenXinLims.Application.List.LimsListItemEntry">
+             <summary>
+             列表项实体类
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.List.LimsListItemEntry.Id">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.List.LimsListItemEntry.ListId">
+             <summary>
+             lims_list表的主键 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.List.LimsListItemEntry.Name">
+             <summary>
+             显示值 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.List.LimsListItemEntry.Value">
+             <summary>
+             储存值 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.List.LimsListItemEntry.Order">
+             <summary>
+             排序 
+            </summary>
+        </member>
+        <member name="M:BenXinLims.Application.List.ListServices.AddList(BenXinLims.Application.List.LimsListEntry)">
+            <summary>
+            添加列表
+            </summary>
+            <param name="listEntry"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Application.List.ListServices.UpdateList(BenXinLims.Application.List.LimsListEntry)">
+            <summary>
+            更新列表
+            </summary>
+            <param name="listEntry"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Application.List.ListServices.DeleteList(System.Int32)">
+            <summary>
+            删除列表，同时删除列表项
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Application.List.ListServices.GetListItem(System.Int32)">
+            <summary>
+            获取列表项
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Application.List.ListServices.AddListItem(BenXinLims.Application.List.LimsListItemEntry)">
+            <summary>
+            添加列表项
+            </summary>
+            <param name="listItemEntry"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Application.List.ListServices.UpdateListItem(BenXinLims.Application.List.LimsListItemEntry)">
+            <summary>
+            更新列表项
+            </summary>
+            <param name="listItemEntry"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Application.List.ListServices.DeleteListItem(System.Int32)">
+            <summary>
+            删除列表项
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
         <member name="T:BenXinLims.Application.sampleServices">
             <summary>
             样品服务
