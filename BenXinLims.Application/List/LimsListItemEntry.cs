@@ -36,6 +36,6 @@ namespace BenXinLims.Application.List
         /// 排序 
         ///</summary>
         [SugarColumn(ColumnName = "order")]
-        public string Order { get; set; }
+        public int Order { get; set; }
     }
 }
