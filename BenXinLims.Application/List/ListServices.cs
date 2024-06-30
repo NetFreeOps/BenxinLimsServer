@@ -21,7 +21,10 @@ namespace BenXinLims.Application.List
 
             RefAsync<int> total = new RefAsync<int>();
 
-            List<LimsListEntry> list = await db.Queryable<LimsListEntry>().ToPageListAsync(listEntryDto.PageIndex, listEntryDto.PageSize, total);
+            List<LimsListEntry> list = await db.Queryable<LimsListEntry>()
+                .WhereIF(listEntryDto.Name != null,it =>it.Name.Contains(listEntryDto.Name))
+                .WhereIF(listEntryDto.ListType != null, it => it.ListType == listEntryDto.ListType)
+                .ToPageListAsync(listEntryDto.PageIndex, listEntryDto.PageSize, total);
 
             PageOutEntity page = new PageOutEntity
             {
