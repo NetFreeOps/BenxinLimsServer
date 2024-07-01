@@ -1,0 +1,1 @@
+import{openBlock as e,createElementBlock as t}from"vue";import{_ as r}from"./app-Pp9qU5ky.js";const c={};function n(o,_){return e(),t("div")}const f=r(c,[["render",n],["__file","resultFunction.html.vue"]]);export{f as default};
