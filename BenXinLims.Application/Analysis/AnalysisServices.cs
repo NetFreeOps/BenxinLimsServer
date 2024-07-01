@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BenXinLims.Core;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,27 +10,48 @@ namespace BenXinLims.Application.Analysis
     /// <summary>
     /// 分析服务
     /// </summary>
-    public class AnalysisServices:IDynamicApiController,ITransient
+    public class AnalysisServices : IDynamicApiController, ITransient
     {
-        // 建立新分析
-        public Task<string> createAnalysis(string analysisName)
+        /// <summary>
+        /// 建立新分析
+        /// </summary>
+        /// <param name="analysisEntry"></param>
+        /// <returns></returns>
+        public async Task<int> createAnalysis(AnalysisEntry analysisEntry)
         {
-            return Task.FromResult("OK");
+            var db = DbContext.Instance;
+            int res = await db.Insertable(analysisEntry).ExecuteCommandAsync();
+            return res;
         }
-        // 删除分析
-        public Task<string> deleteAnalysis(string analysisName)
+        /// <summary>
+        /// 删除分析
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public async Task<int> deleteAnalysis(int id)
         {
-            return Task.FromResult("OK");
+            var db = DbContext.Instance;
+            //int ressub = await db.Deleteable<AnalysisEntry>().Where(.ExecuteCommandAsync();
+            int res = await db.Deleteable<AnalysisEntry>().Where(it =>it.Id == id).ExecuteCommandAsync();
+            return res;
         }
-        // 获取分析列表
-        public Task<string> getAnalysisList()
+        /// <summary>
+        /// 获取所有分析列表
+        /// </summary>
+        /// <returns></returns>
+        public async Task<List<AnalysisEntry>> getAnalysisList()
         {
-            return Task.FromResult("OK");
+            var db = DbContext.Instance;
+            var list = await db.Queryable<AnalysisEntry>().ToListAsync();
+            return list;
         }
         // 更新分析信息
-        public Task<string> updateAnalysis(string analysisName)
+        public async Task<int> updateAnalysis(AnalysisEntry analysisEntry)
         {
-            return Task.FromResult("OK");
+            var db = DbContext.Instance;
+
+            int res = await db.Updateable(analysisEntry).ExecuteCommandAsync();
+            return res;
         }
         // 为分析添加分项
         public Task<string> addItemToAnalysis(string analysisName)
