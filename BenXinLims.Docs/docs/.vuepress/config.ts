@@ -66,7 +66,9 @@ export default defineUserConfig({
         link:'/database/tables',
         children:[
           {text:'列表',link:'/database/lims-list'},
-          {text:'列表项',link:'/database/lims-list-item'}
+          {text:'列表项',link:'/database/lims-list-item'},
+          {text:'分析表',link:'/database/analysis'},
+          {text:'分析表分项',link:'/database/analysis-item'}
         ]
       }
     ]
