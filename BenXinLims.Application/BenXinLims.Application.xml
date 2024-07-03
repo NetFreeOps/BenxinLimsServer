@@ -4,10 +4,107 @@
         <name>BenXinLims.Application</name>
     </assembly>
     <members>
+        <member name="T:BenXinLims.Application.Analysis.AnalysisEntry">
+             <summary>
+             
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Analysis.AnalysisEntry.Id">
+             <summary>
+             自增主键 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Analysis.AnalysisEntry.Name">
+             <summary>
+             分析名称，不能重复 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Analysis.AnalysisEntry.Version">
+             <summary>
+             版本，默认1 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Analysis.AnalysisEntry.GroupName">
+             <summary>
+             组名 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Analysis.AnalysisEntry.LabName">
+             <summary>
+             实验室名 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Analysis.AnalysisEntry.Active">
+             <summary>
+             是否激活 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Analysis.AnalysisEntry.ReportName">
+             <summary>
+             报告名称 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Analysis.AnalysisEntry.CommonName">
+             <summary>
+             通用名称 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Analysis.AnalysisEntry.AnalysisType">
+             <summary>
+             分析类型 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Analysis.AnalysisEntry.Description">
+             <summary>
+             描述信息 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Analysis.AnalysisEntry.DefaultPost">
+             <summary>
+             默认岗位 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Analysis.AnalysisEntry.Standard">
+             <summary>
+             分析标准 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Analysis.AnalysisEntry.FileLink">
+             <summary>
+             关联文件 
+            </summary>
+        </member>
         <member name="T:BenXinLims.Application.Analysis.AnalysisServices">
             <summary>
             分析服务
             </summary>
+        </member>
+        <member name="M:BenXinLims.Application.Analysis.AnalysisServices.createAnalysis(BenXinLims.Application.Analysis.AnalysisEntry)">
+            <summary>
+            建立新分析
+            </summary>
+            <param name="analysisEntry"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Application.Analysis.AnalysisServices.deleteAnalysis(System.Int32)">
+            <summary>
+            删除分析
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Application.Analysis.AnalysisServices.getAnalysisList">
+            <summary>
+            获取所有分析列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Application.Analysis.AnalysisServices.updateAnalysis(BenXinLims.Application.Analysis.AnalysisEntry)">
+            <summary>
+            更新分析
+            </summary>
+            <param name="analysisEntry"></param>
+            <returns></returns>
         </member>
         <member name="T:BenXinLims.Application.List.LimsListEntry">
              <summary>
@@ -100,6 +197,13 @@
             获取列表项
             </summary>
             <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Application.List.ListServices.GetListItemByListName(System.String)">
+            <summary>
+            根据列表名称获取列表项
+            </summary>
+            <param name="listName"></param>
             <returns></returns>
         </member>
         <member name="M:BenXinLims.Application.List.ListServices.AddListItem(BenXinLims.Application.List.LimsListItemEntry)">

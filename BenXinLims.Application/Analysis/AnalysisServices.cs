@@ -45,12 +45,16 @@ namespace BenXinLims.Application.Analysis
             var list = await db.Queryable<AnalysisEntry>().ToListAsync();
             return list;
         }
-        // 更新分析信息
+       /// <summary>
+       /// 更新分析
+       /// </summary>
+       /// <param name="analysisEntry"></param>
+       /// <returns></returns>
         public async Task<int> updateAnalysis(AnalysisEntry analysisEntry)
         {
             var db = DbContext.Instance;
 
-            int res = await db.Updateable(analysisEntry).ExecuteCommandAsync();
+            int res = await db.Updateable(analysisEntry).IgnoreColumns(ignoreAllNullColumns:true). ExecuteCommandAsync();
             return res;
         }
         // 为分析添加分项

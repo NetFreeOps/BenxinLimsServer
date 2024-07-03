@@ -88,6 +88,17 @@ namespace BenXinLims.Application.List
             return list;
         }
         /// <summary>
+        /// 根据列表名称获取列表项
+        /// </summary>
+        /// <param name="listName"></param>
+        /// <returns></returns>
+        public async Task<List<LimsListItemEntry>> GetListItemByListName(string listName)
+        {
+            var db = DbContext.Instance;
+            List<LimsListItemEntry> list = await db.Queryable<LimsListItemEntry>().LeftJoin<LimsListEntry>((lt,l)=>lt.ListId == l.Id).Where((lt,l) =>l.Name == listName ) .Select((lt, l) => new LimsListItemEntry { Id =lt.Id,Name = lt.Name,Value = lt.Value,Order = lt.Order}).ToListAsync();
+            return list;    
+        }
+        /// <summary>
         /// 添加列表项
         /// </summary>
         /// <param name="listItemEntry"></param>
