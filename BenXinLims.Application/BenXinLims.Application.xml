@@ -74,6 +74,112 @@
              关联文件 
             </summary>
         </member>
+        <member name="T:BenXinLims.Application.Analysis.AnalysisItemEntry">
+             <summary>
+             分析分项实体类
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Analysis.AnalysisItemEntry.Id">
+             <summary>
+             主键 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Analysis.AnalysisItemEntry.AnalysisId">
+             <summary>
+             分析表主键 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Analysis.AnalysisItemEntry.AnalysisName">
+             <summary>
+             分析表分析名
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Analysis.AnalysisItemEntry.Name">
+             <summary>
+             名称 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Analysis.AnalysisItemEntry.Version">
+             <summary>
+             版本 
+             默认值: 1
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Analysis.AnalysisItemEntry.OrderNumber">
+             <summary>
+             排序 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Analysis.AnalysisItemEntry.ResultType">
+             <summary>
+             结果类型 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Analysis.AnalysisItemEntry.Units">
+             <summary>
+             单位 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Analysis.AnalysisItemEntry.MinValue">
+             <summary>
+             最小值，默认空 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Analysis.AnalysisItemEntry.MaxValue">
+             <summary>
+             最大值，默认空 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Analysis.AnalysisItemEntry.Places">
+             <summary>
+             重复数 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Analysis.AnalysisItemEntry.AutoCalc">
+             <summary>
+             自动计算 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Analysis.AnalysisItemEntry.CommonName">
+             <summary>
+             通用名 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Analysis.AnalysisItemEntry.Nullable">
+             <summary>
+             可为空 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Analysis.AnalysisItemEntry.Reportable">
+             <summary>
+             可报告 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Analysis.AnalysisItemEntry.ListKey">
+             <summary>
+             列表型结果列表键 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Analysis.AnalysisItemEntry.CalcRule">
+             <summary>
+             计算规则，公式 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Analysis.AnalysisItemEntry.CommonCalcRule">
+             <summary>
+             通用计算规则，最后生效 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Analysis.AnalysisItemEntry.RoundRule">
+             <summary>
+             修约规则 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Analysis.AnalysisItemEntry.GroupName">
+             <summary>
+             组名 
+            </summary>
+        </member>
         <member name="T:BenXinLims.Application.Analysis.AnalysisServices">
             <summary>
             分析服务
@@ -104,6 +210,34 @@
             更新分析
             </summary>
             <param name="analysisEntry"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Application.Analysis.AnalysisServices.addItemToAnalysis(BenXinLims.Application.Analysis.AnalysisItemEntry)">
+            <summary>
+            为分析增加分项
+            </summary>
+            <param name="analysisItem"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Application.Analysis.AnalysisServices.deleteItemFromAnalysis(System.Int32)">
+            <summary>
+            根据ID删除分析的分项
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Application.Analysis.AnalysisServices.getItemListFromAnalysis(System.String)">
+            <summary>
+            根据分析名称获取分析的分项列表
+            </summary>
+            <param name="analysisName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Application.Analysis.AnalysisServices.updateItemFromAnalysis(BenXinLims.Application.Analysis.AnalysisItemEntry)">
+            <summary>
+            更新分析的分项信息
+            </summary>
+            <param name="analysisItem"></param>
             <returns></returns>
         </member>
         <member name="T:BenXinLims.Application.List.LimsListEntry">

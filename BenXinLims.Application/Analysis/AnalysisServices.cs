@@ -32,7 +32,7 @@ namespace BenXinLims.Application.Analysis
         {
             var db = DbContext.Instance;
             //int ressub = await db.Deleteable<AnalysisEntry>().Where(.ExecuteCommandAsync();
-            int res = await db.Deleteable<AnalysisEntry>().Where(it =>it.Id == id).ExecuteCommandAsync();
+            int res = await db.Deleteable<AnalysisEntry>().Where(it => it.Id == id).ExecuteCommandAsync();
             return res;
         }
         /// <summary>
@@ -45,37 +45,62 @@ namespace BenXinLims.Application.Analysis
             var list = await db.Queryable<AnalysisEntry>().ToListAsync();
             return list;
         }
-       /// <summary>
-       /// 更新分析
-       /// </summary>
-       /// <param name="analysisEntry"></param>
-       /// <returns></returns>
+        /// <summary>
+        /// 更新分析
+        /// </summary>
+        /// <param name="analysisEntry"></param>
+        /// <returns></returns>
         public async Task<int> updateAnalysis(AnalysisEntry analysisEntry)
         {
             var db = DbContext.Instance;
 
-            int res = await db.Updateable(analysisEntry).IgnoreColumns(ignoreAllNullColumns:true). ExecuteCommandAsync();
+            int res = await db.Updateable(analysisEntry).IgnoreColumns(ignoreAllNullColumns: true).ExecuteCommandAsync();
             return res;
         }
-        // 为分析添加分项
-        public Task<string> addItemToAnalysis(string analysisName)
+        /// <summary>
+        /// 为分析增加分项
+        /// </summary>
+        /// <param name="analysisItem"></param>
+        /// <returns></returns>
+        public async Task<int> addItemToAnalysis(AnalysisItemEntry analysisItem)
         {
-            return Task.FromResult("OK");
+            var db = DbContext.Instance;
+            int res = await db.Insertable(analysisItem).ExecuteCommandAsync();
+            return res;
         }
-        // 为分析删除分项
-        public Task<string> deleteItemFromAnalysis(string analysisName)
+        /// <summary>
+        /// 根据ID删除分析的分项
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public Task<int> deleteItemFromAnalysis(int id)
         {
-            return Task.FromResult("OK");
+            var db = DbContext.Instance;
+            return db.Deleteable<AnalysisItemEntry>().Where(it => it.Id == id).ExecuteCommandAsync();
         }
-        // 获取分析的分项列表
-        public Task<string> getItemListFromAnalysis(string analysisName)
+        /// <summary>
+        /// 根据分析名称获取分析的分项列表
+        /// </summary>
+        /// <param name="analysisName"></param>
+        /// <returns></returns>
+        public async Task<List<AnalysisItemEntry>> getItemListFromAnalysis(string analysisName)
         {
-            return Task.FromResult("OK");
+            var db = DbContext.Instance;
+            var list = await db.Queryable<AnalysisItemEntry>()
+                .Where(it => it.AnalysisName == analysisName)
+                .ToListAsync();
+            return list;
+            // return Task.FromResult("OK");
         }
-        // 更新分析的分项信息
-        public Task<string> updateItemFromAnalysis(string analysisName)
+        /// <summary>
+        /// 更新分析的分项信息
+        /// </summary>
+        /// <param name="analysisItem"></param>
+        /// <returns></returns>
+        public Task<int> updateItemFromAnalysis(AnalysisItemEntry analysisItem)
         {
-            return Task.FromResult("OK");
+            var db = DbContext.Instance;
+            return db.Updateable(analysisItem).IgnoreColumns(ignoreAllNullColumns: true).ExecuteCommandAsync();
         }
         // 为分析分配人员
         public Task<string> addUserToAnalysis(string analysis)
