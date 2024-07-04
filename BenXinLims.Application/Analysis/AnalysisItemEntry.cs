@@ -58,17 +58,17 @@ namespace BenXinLims.Application.Analysis
         /// 最小值，默认空 
         ///</summary>
         [SugarColumn(ColumnName = "min_value")]
-        public string MinValue { get; set; }
+        public int? MinValue { get; set; }
         /// <summary>
         /// 最大值，默认空 
         ///</summary>
         [SugarColumn(ColumnName = "max_value")]
-        public string MaxValue { get; set; }
+        public int? MaxValue { get; set; }
         /// <summary>
         /// 重复数 
         ///</summary>
         [SugarColumn(ColumnName = "places")]
-        public string Places { get; set; }
+        public int? Places { get; set; }
         /// <summary>
         /// 自动计算 
         ///</summary>
