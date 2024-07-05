@@ -73,7 +73,7 @@ namespace BenXinLims.Application.Analysis
         /// 自动计算 
         ///</summary>
         [SugarColumn(ColumnName = "auto_calc")]
-        public string AutoCalc { get; set; }
+        public int? AutoCalc { get; set; }
         /// <summary>
         /// 通用名 
         ///</summary>
@@ -83,12 +83,12 @@ namespace BenXinLims.Application.Analysis
         /// 可为空 
         ///</summary>
         [SugarColumn(ColumnName = "nullable")]
-        public string Nullable { get; set; }
+        public int? Nullable { get; set; }
         /// <summary>
         /// 可报告 
         ///</summary>
         [SugarColumn(ColumnName = "reportable")]
-        public string Reportable { get; set; }
+        public int? Reportable { get; set; }
         /// <summary>
         /// 列表型结果列表键 
         ///</summary>
