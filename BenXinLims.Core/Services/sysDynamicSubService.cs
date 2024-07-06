@@ -27,7 +27,7 @@ namespace BenXinLims.Core.Services
         /// <param name="dto">程序名称</param>
         /// <returns></returns>
        
-        public async Task<string> Compile([FromBody] string csharpCode,[FromQuery] calcEntryDto dto)
+        public  string Compile([FromBody] string csharpCode,[FromQuery] calcEntryDto dto)
         {
             string assemblyName = default;
             
@@ -39,6 +39,18 @@ namespace BenXinLims.Core.Services
             sb.Append("{");
             sb.AppendLine("public class userSub : IDynamicApiController");
             sb.AppendLine("{");
+            sb.AppendLine(" /// <summary>");
+            sb.AppendLine("/// <summary>");
+            if(dto.type == "common")
+            {
+                sb.AppendLine("///" + dto.Name);
+            }
+            if(dto.type == "analysis")
+            {
+                sb.AppendLine("///" + dto.AnalysisId + "-" + dto.AnalysisItemId);
+            }
+            sb.AppendLine("/// </summary>");
+            sb.AppendLine("/// <returns></returns>");
             sb.AppendLine(csharpCode);
             sb.AppendLine("}}");
 
