@@ -1,4 +1,5 @@
-﻿using SqlSugar;
+﻿using BenXinLims.Core.Entry;
+using SqlSugar;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,11 +24,12 @@ namespace BenXinLims.Core.Services
         /// 动态添加 WebAPI/Controller
         /// </summary>
         /// <param name="csharpCode"></param>
-        /// <param name="assemblyName">可自行指定程序集名称</param>
+        /// <param name="dto">程序名称</param>
         /// <returns></returns>
        
-        public string Compile([FromBody] string csharpCode, [FromQuery] string assemblyName = default)
+        public async Task<string> Compile([FromBody] string csharpCode,[FromQuery] calcEntryDto dto)
         {
+            string assemblyName = default;
             
             // 拼接代码
 
@@ -41,14 +43,69 @@ namespace BenXinLims.Core.Services
             sb.AppendLine("}}");
 
 
-            // 编译 C# 代码并返回动态程序集
-            var dynamicAssembly = App.CompileCSharpClassCode(sb.ToString(), assemblyName);
 
-            // 将程序集添加进动态 WebAPI 应用部件
-            _changeProvider.AddAssembliesWithNotifyChanges(dynamicAssembly);
+            try
+            {
+                // Ensure sb is not modified during compilation
+                lock (sb)
+                {
+                    // Compile C# Code
+                    var dynamicAssembly = App.CompileCSharpClassCode(sb.ToString(), assemblyName);
 
-            // 返回动态程序集名称
-            return dynamicAssembly.GetName().Name;
+                    // Add Assembly to Change Provider
+                    _changeProvider.AddAssembliesWithNotifyChanges(dynamicAssembly);
+
+                    var db = DbContext.Instance;
+                    if(dto.type == "analysis")
+                    {
+                        AnalysisCalc analysisCalc = new AnalysisCalc();
+                        analysisCalc.Id = dto.Id;
+                        analysisCalc.AnalysisId = dto.AnalysisId;
+                        analysisCalc.AnalysisItemId = dto.AnalysisItemId;
+                        analysisCalc.SourceCode = csharpCode;
+                       // 检查analysisitemid是否存在
+                        var analysisItem = db.Queryable<AnalysisCalc>().Where(x => x.AnalysisItemId == dto.AnalysisItemId).First();
+                        if (analysisItem == null)
+                        {
+                            db.Insertable(analysisCalc).ExecuteCommandAsync();//插入
+                        }
+                        else
+                        {
+                            db.Updateable(analysisCalc).ExecuteCommandAsync();//更新
+                        }
+                    }
+                    if(dto.type =="common")
+                    {
+                        CommonCalc commonCalc = new CommonCalc();
+                        commonCalc.Id = dto.Id;
+                        commonCalc.Name = dto.Name;
+                        commonCalc.SourceCode = csharpCode;
+                        // 根据name检查是否存在
+                       
+                        var commonItem = db.Queryable<CommonCalc>().Where(x => x.Name == dto.Name).First();
+                        if (commonItem == null)
+                        {
+                            db.Insertable(commonCalc).ExecuteCommandAsync();//插入
+                        }
+                        else
+                        {
+                            db.Updateable(commonCalc).ExecuteCommandAsync();//更新
+                        }
+                    }
+
+                    // 返回动态程序集名称
+                    return dynamicAssembly.GetName().Name;
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle compilation errors
+                Console.WriteLine($"Failed to compile code: {ex.Message}");
+                // Log the exception or take other appropriate action
+                return $"Failed to compile code: {ex.Message}";
+            }
+
+           
         }
 
         /// <summary>
