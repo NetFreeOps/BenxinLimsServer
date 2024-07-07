@@ -571,7 +571,7 @@
             <param name="subName">函数名称</param>
             <returns></returns>
         </member>
-        <member name="M:BenXinLims.Core.Services.sysDynamicSubService.Compile(System.String,System.String)">
+        <member name="M:BenXinLims.Core.Services.sysDynamicSubService.Compile(System.String,BenXinLims.Core.Entry.calcEntryDto)">
             <summary>
             动态添加 WebAPI/Controller
             </summary>
