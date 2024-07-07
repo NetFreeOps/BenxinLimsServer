@@ -34,6 +34,71 @@
             登录实体类
             </summary>
         </member>
+        <member name="T:BenXinLims.Core.Entry.CommonCalc">
+             <summary>
+             通用函数表
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.CommonCalc.Id">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.CommonCalc.Name">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.CommonCalc.Version">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.CommonCalc.SourceCode">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="T:BenXinLims.Core.Entry.AnalysisCalc">
+             <summary>
+             分析计算函数表
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.AnalysisCalc.Id">
+             <summary>
+             主键 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.AnalysisCalc.AnalysisId">
+             <summary>
+             分析表主键 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.AnalysisCalc.AnalysisItemId">
+             <summary>
+             分析分项表主键 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.AnalysisCalc.Version">
+             <summary>
+             版本 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.AnalysisCalc.SourceCode">
+             <summary>
+             源码 
+            </summary>
+        </member>
+        <member name="T:BenXinLims.Core.Entry.calcEntryDto">
+            <summary>
+            设置、更新函数实体类
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.calcEntryDto.type">
+            <summary>
+            类型,analysi或common
+            </summary>
+        </member>
         <member name="P:BenXinLims.Core.Entry.dbEntryBase.CreateUser">
              <summary>
               
@@ -511,7 +576,7 @@
             动态添加 WebAPI/Controller
             </summary>
             <param name="csharpCode"></param>
-            <param name="assemblyName">可自行指定程序集名称</param>
+            <param name="dto">程序名称</param>
             <returns></returns>
         </member>
         <member name="M:BenXinLims.Core.Services.sysDynamicSubService.Remove(System.String)">
