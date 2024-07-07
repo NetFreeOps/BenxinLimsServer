@@ -234,6 +234,11 @@
               
             </summary>
         </member>
+        <member name="T:BenXinLims.Core.Entry.systemSubEntry">
+            <summary>
+            系统内置函数调用实体类
+            </summary>
+        </member>
         <member name="T:BenXinLims.Core.Entry.sysUserConfigEntry">
              <summary>
              用户配置表
@@ -492,6 +497,14 @@
             <summary>
             动态接口服务
             </summary>
+        </member>
+        <member name="M:BenXinLims.Core.Services.sysDynamicSubService.CallSystemSub(BenXinLims.Core.Entry.systemSubEntry,System.String)">
+            <summary>
+            动态调用系统函数
+            </summary>
+            <param name="callSystemSub"></param>
+            <param name="subName">函数名称</param>
+            <returns></returns>
         </member>
         <member name="M:BenXinLims.Core.Services.sysDynamicSubService.Compile(System.String,System.String)">
             <summary>

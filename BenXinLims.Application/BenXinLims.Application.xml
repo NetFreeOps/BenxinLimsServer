@@ -373,6 +373,11 @@
             <param name="sample_number"></param>
             <returns></returns>
         </member>
+        <member name="T:BenXinLims.Application.SystemSub">
+            <summary>
+            系统内置函数
+            </summary>
+        </member>
         <member name="T:BenXinLims.Application.SystemAppService">
             <summary>
             系统服务接口

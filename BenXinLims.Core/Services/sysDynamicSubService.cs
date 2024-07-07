@@ -1,4 +1,5 @@
-﻿using SqlSugar;
+﻿using BenXinLims.Core.Entry;
+using SqlSugar;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +18,24 @@ namespace BenXinLims.Core.Services
         public sysDynamicSubService(IDynamicApiRuntimeChangeProvider changeProvider)
         {
             _changeProvider = changeProvider;
+        }
+        /// <summary>
+        /// 动态调用系统函数
+        /// </summary>
+        /// <param name="callSystemSub"></param>
+        /// <param name="subName">函数名称</param>
+        /// <returns></returns>
+        public dynamic CallSystemSub([FromBody] systemSubEntry callSystemSub, [FromQuery] string subName)
+        {
+            switch (subName)
+            {
+                case "":
+
+                    break;
+                default:
+                    break;
+            }
+            return "";
         }
 
         /// <summary>
