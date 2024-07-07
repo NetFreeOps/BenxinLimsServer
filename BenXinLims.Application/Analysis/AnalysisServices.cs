@@ -65,6 +65,12 @@ namespace BenXinLims.Application.Analysis
         public async Task<int> addItemToAnalysis(AnalysisItemEntry analysisItem)
         {
             var db = DbContext.Instance;
+            // 检查分项是否存在
+            var item = await db.Queryable<AnalysisItemEntry>().Where(it => it.AnalysisName == analysisItem.AnalysisName && it.Name == analysisItem.Name).FirstAsync();
+            if (item != null)
+            {
+                return -1;
+            }
             int res = await db.Insertable(analysisItem).ExecuteCommandAsync();
             return res;
         }
@@ -97,10 +103,16 @@ namespace BenXinLims.Application.Analysis
         /// </summary>
         /// <param name="analysisItem"></param>
         /// <returns></returns>
-        public Task<int> updateItemFromAnalysis(AnalysisItemEntry analysisItem)
+        public async Task<int> updateItemFromAnalysis(AnalysisItemEntry analysisItem)
         {
             var db = DbContext.Instance;
-            return db.Updateable(analysisItem).IgnoreColumns(ignoreAllNullColumns: true).ExecuteCommandAsync();
+            // 检查分项是否存在
+            var item = db.Queryable<AnalysisItemEntry>().Where(it => it.AnalysisName == analysisItem.AnalysisName && it.Name == analysisItem.Name).FirstAsync();
+            if (item != null)
+            {
+                return -1;
+            }
+            return await db.Updateable(analysisItem).IgnoreColumns(ignoreAllNullColumns: true).ExecuteCommandAsync();
         }
         // 为分析分配人员
         public Task<string> addUserToAnalysis(string analysis)
