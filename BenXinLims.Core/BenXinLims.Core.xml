@@ -96,7 +96,7 @@
         </member>
         <member name="P:BenXinLims.Core.Entry.calcEntryDto.type">
             <summary>
-            类型,analysi或common
+            类型,analysis或common
             </summary>
         </member>
         <member name="P:BenXinLims.Core.Entry.dbEntryBase.CreateUser">
@@ -569,6 +569,21 @@
             </summary>
             <param name="callSystemSub"></param>
             <param name="subName">函数名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Core.Services.sysDynamicSubService.SaveDynamicCode(System.String,BenXinLims.Core.Entry.calcEntryDto)">
+            <summary>
+            保存动态代码
+            </summary>
+            <param name="csharpCode"></param>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Core.Services.sysDynamicSubService.GetDynamicCode(BenXinLims.Core.Entry.calcEntryDto)">
+            <summary>
+            获取动态代码
+            </summary>
+            <param name="dto"></param>
             <returns></returns>
         </member>
         <member name="M:BenXinLims.Core.Services.sysDynamicSubService.Compile(System.String,BenXinLims.Core.Entry.calcEntryDto)">

@@ -85,6 +85,33 @@ namespace BenXinLims.Core.Services
             }
             return -1;
         }
+        /// <summary>
+        /// 获取动态代码
+        /// </summary>
+        /// <param name="dto"></param>
+        /// <returns></returns>
+        public string GetDynamicCode([FromQuery] calcEntryDto dto)
+        {
+            string result = default;
+            var db = DbContext.Instance;
+            if (dto.type == "analysis")
+            {
+                var analysisItem = db.Queryable<AnalysisCalc>().Where(x => x.AnalysisItemId == dto.AnalysisItemId && x.AnalysisItemId == dto.AnalysisItemId).First();
+                if (analysisItem != null)
+                {
+                    result = analysisItem.SourceCode;
+                }
+            }
+            if (dto.type == "common")
+            {
+                var commonItem = db.Queryable<CommonCalc>().Where(x => x.Name == dto.Name).First();
+                if (commonItem != null)
+                {
+                    result = commonItem.SourceCode;
+                }
+            }
+            return result;
+        }
 
         /// <summary>
         /// 动态添加 WebAPI/Controller

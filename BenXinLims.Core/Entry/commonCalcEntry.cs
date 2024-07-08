@@ -77,7 +77,7 @@ namespace BenXinLims.Core.Entry
     {
         public int Id { get; set; }
         /// <summary>
-        /// 类型,analysi或common
+        /// 类型,analysis或common
         /// </summary>
         public string type { get; set; }
         public string Name { get; set; }    
