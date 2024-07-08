@@ -11,7 +11,7 @@ namespace BenXinLims.Core.Services
     /// <summary>
     /// 动态接口服务
     /// </summary>
-    public class sysDynamicSubService:IDynamicApiController
+    public class sysDynamicSubService : IDynamicApiController
     {
         private readonly IDynamicApiRuntimeChangeProvider _changeProvider;
 
@@ -37,6 +37,54 @@ namespace BenXinLims.Core.Services
             }
             return "";
         }
+        /// <summary>
+        /// 保存动态代码
+        /// </summary>
+        /// <param name="csharpCode"></param>
+        /// <param name="dto"></param>
+        /// <returns></returns>
+        public async Task<int> SaveDynamicCode([FromBody] string csharpCode, [FromQuery] calcEntryDto dto)
+        {
+
+            var db = DbContext.Instance;
+            if (dto.type == "analysis")
+            {
+                AnalysisCalc analysisCalc = new AnalysisCalc();
+                analysisCalc.Id = dto.Id;
+                analysisCalc.AnalysisId = dto.AnalysisId;
+                analysisCalc.AnalysisItemId = dto.AnalysisItemId;
+                analysisCalc.SourceCode = csharpCode;
+                // 检查analysisitemid是否存在
+                var analysisItem = db.Queryable<AnalysisCalc>().Where(x => x.AnalysisItemId == dto.AnalysisItemId).First();
+                if (analysisItem == null)
+                {
+                 return   await  db.Insertable(analysisCalc).ExecuteCommandAsync();//插入
+                }
+                else
+                {
+                 return await  db.Updateable(analysisCalc).ExecuteCommandAsync();//更新
+                }
+            }
+            if (dto.type == "common")
+            {
+                CommonCalc commonCalc = new CommonCalc();
+                commonCalc.Id = dto.Id;
+                commonCalc.Name = dto.Name;
+                commonCalc.SourceCode = csharpCode;
+                // 根据name检查是否存在
+
+                var commonItem = db.Queryable<CommonCalc>().Where(x => x.Name == dto.Name).First();
+                if (commonItem == null)
+                {
+                 return   await db.Insertable(commonCalc).ExecuteCommandAsync();//插入
+                }
+                else
+                {
+                 return await  db.Updateable(commonCalc).ExecuteCommandAsync();//更新
+                }
+            }
+            return -1;
+        }
 
         /// <summary>
         /// 动态添加 WebAPI/Controller
@@ -44,11 +92,11 @@ namespace BenXinLims.Core.Services
         /// <param name="csharpCode"></param>
         /// <param name="dto">程序名称</param>
         /// <returns></returns>
-       
-        public  string Compile([FromBody] string csharpCode,[FromQuery] calcEntryDto dto)
+
+        public string Compile([FromBody] string csharpCode, [FromQuery] calcEntryDto dto)
         {
             string assemblyName = default;
-            
+
             // 拼接代码
 
             StringBuilder sb = new StringBuilder();
@@ -59,11 +107,11 @@ namespace BenXinLims.Core.Services
             sb.AppendLine("{");
             sb.AppendLine(" /// <summary>");
             sb.AppendLine("/// <summary>");
-            if(dto.type == "common")
+            if (dto.type == "common")
             {
                 sb.AppendLine("///" + dto.Name);
             }
-            if(dto.type == "analysis")
+            if (dto.type == "analysis")
             {
                 sb.AppendLine("///" + dto.AnalysisId + "-" + dto.AnalysisItemId);
             }
@@ -86,14 +134,14 @@ namespace BenXinLims.Core.Services
                     _changeProvider.AddAssembliesWithNotifyChanges(dynamicAssembly);
 
                     var db = DbContext.Instance;
-                    if(dto.type == "analysis")
+                    if (dto.type == "analysis")
                     {
                         AnalysisCalc analysisCalc = new AnalysisCalc();
                         analysisCalc.Id = dto.Id;
                         analysisCalc.AnalysisId = dto.AnalysisId;
                         analysisCalc.AnalysisItemId = dto.AnalysisItemId;
                         analysisCalc.SourceCode = csharpCode;
-                       // 检查analysisitemid是否存在
+                        // 检查analysisitemid是否存在
                         var analysisItem = db.Queryable<AnalysisCalc>().Where(x => x.AnalysisItemId == dto.AnalysisItemId).First();
                         if (analysisItem == null)
                         {
@@ -104,14 +152,14 @@ namespace BenXinLims.Core.Services
                             db.Updateable(analysisCalc).ExecuteCommandAsync();//更新
                         }
                     }
-                    if(dto.type =="common")
+                    if (dto.type == "common")
                     {
                         CommonCalc commonCalc = new CommonCalc();
                         commonCalc.Id = dto.Id;
                         commonCalc.Name = dto.Name;
                         commonCalc.SourceCode = csharpCode;
                         // 根据name检查是否存在
-                       
+
                         var commonItem = db.Queryable<CommonCalc>().Where(x => x.Name == dto.Name).First();
                         if (commonItem == null)
                         {
@@ -135,7 +183,7 @@ namespace BenXinLims.Core.Services
                 return $"Failed to compile code: {ex.Message}";
             }
 
-           
+
         }
 
         /// <summary>
