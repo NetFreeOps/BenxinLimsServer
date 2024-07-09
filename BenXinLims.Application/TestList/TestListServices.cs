@@ -46,7 +46,7 @@ namespace BenXinLims.Application.TestList
         public async Task<int> updateTestList(TestListEntry entry)
         {
             var db = DbContext.Instance;
-            var id = await db.Updateable(entry).ExecuteCommandAsync();
+            var id = await db.Updateable(entry).IgnoreColumns(ignoreAllNullColumns:true). ExecuteCommandAsync();
             return id;
         }
         /// <summary>

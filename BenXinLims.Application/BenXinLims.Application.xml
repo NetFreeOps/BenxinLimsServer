@@ -361,6 +361,89 @@
             <param name="id"></param>
             <returns></returns>
         </member>
+        <member name="T:BenXinLims.Application.ProcessUnit.ProcessUnitEntry">
+             <summary>
+             装置实体类
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.ProcessUnit.ProcessUnitEntry.Id">
+             <summary>
+             自增主键 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.ProcessUnit.ProcessUnitEntry.ParentId">
+             <summary>
+             父装置ID，没有为0 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.ProcessUnit.ProcessUnitEntry.Name">
+             <summary>
+             装置名 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.ProcessUnit.ProcessUnitEntry.Code">
+             <summary>
+             装置代码 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.ProcessUnit.ProcessUnitEntry.Active">
+             <summary>
+             是否激活 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.ProcessUnit.ProcessUnitEntry.Template">
+             <summary>
+             装置模板 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.ProcessUnit.ProcessUnitEntry.AliasName">
+             <summary>
+             别名 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.ProcessUnit.ProcessUnitEntry.WorkShop">
+             <summary>
+             所属公司 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.ProcessUnit.ProcessUnitEntry.IsEnd">
+             <summary>
+             是否是末端装置 
+            </summary>
+        </member>
+        <member name="T:BenXinLims.Application.ProcessUnit.ProcessUnitServices">
+            <summary>
+            装置层级管理-从最上级开始，逐级到最下级
+            </summary>
+        </member>
+        <member name="M:BenXinLims.Application.ProcessUnit.ProcessUnitServices.GetProcessUnit(BenXinLims.Application.ProcessUnit.ProcessUnitEntry)">
+            <summary>
+            获取装置列表
+            </summary>
+            <param name="unitEntry"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Application.ProcessUnit.ProcessUnitServices.AddProcessUnit(BenXinLims.Application.ProcessUnit.ProcessUnitEntry)">
+            <summary>
+            添加装置
+            </summary>
+            <param name="unitEntry"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Application.ProcessUnit.ProcessUnitServices.UpdateProcessUnit(BenXinLims.Application.ProcessUnit.ProcessUnitEntry)">
+            <summary>
+            更新装置
+            </summary>
+            <param name="unitEntry"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Application.ProcessUnit.ProcessUnitServices.DeleteProcessUnit(BenXinLims.Application.ProcessUnit.ProcessUnitEntry)">
+            <summary>
+            逻辑删除装置
+            </summary>
+            <param name="unitEntry"></param>
+            <returns></returns>
+        </member>
         <member name="T:BenXinLims.Application.Product.ProductServices">
             <summary>
             产品管理服务
