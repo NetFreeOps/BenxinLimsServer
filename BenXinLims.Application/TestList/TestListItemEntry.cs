@@ -11,7 +11,7 @@ namespace BenXinLims.Application.TestList
     /// 检测单包含的分析表
     ///</summary>
     [SugarTable("test_list_item")]
-    public class TestListItem:dbEntryBase
+    public class TestListItemEntry:dbEntryBase
     {
         /// <summary>
         /// 自增主键 

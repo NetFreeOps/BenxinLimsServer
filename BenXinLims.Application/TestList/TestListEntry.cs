@@ -11,7 +11,7 @@ namespace BenXinLims.Application.TestList
     ///  检测单数据表
     ///</summary>
     [SugarTable("test_list")]
-    public class TestList:dbEntryBase
+    public class TestListEntry:dbEntryBase
     {
         /// <summary>
         /// 自增主键 
@@ -45,5 +45,16 @@ namespace BenXinLims.Application.TestList
         [SugarColumn(ColumnName = "product_name")]
         public string ProductName { get; set; }
        
+    }
+    /// <summary>
+    /// 检测单查询实体类
+    /// </summary>
+    public class TestListQueryDto
+    {
+        public string name { get; set; }
+
+        public string product_name { get;set;}
+
+        public string type { get; set; }
     }
 }

@@ -361,6 +361,11 @@
             <param name="id"></param>
             <returns></returns>
         </member>
+        <member name="T:BenXinLims.Application.Product.ProductServices">
+            <summary>
+            产品管理服务
+            </summary>
+        </member>
         <member name="T:BenXinLims.Application.sampleServices">
             <summary>
             样品服务
@@ -387,6 +392,105 @@
             <summary>
             获取系统描述
             </summary>
+            <returns></returns>
+        </member>
+        <member name="T:BenXinLims.Application.TestList.TestListEntry">
+             <summary>
+              检测单数据表
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.TestList.TestListEntry.Id">
+             <summary>
+             自增主键 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.TestList.TestListEntry.Name">
+             <summary>
+             不可重复名称 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.TestList.TestListEntry.Active">
+             <summary>
+             是否激活 
+             默认值: 1
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.TestList.TestListEntry.Type">
+             <summary>
+             检测单类型，对应样品类型（产品类型） 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.TestList.TestListEntry.Description">
+             <summary>
+             描述信息 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.TestList.TestListEntry.ProductName">
+             <summary>
+             产品名称 
+            </summary>
+        </member>
+        <member name="T:BenXinLims.Application.TestList.TestListQueryDto">
+            <summary>
+            检测单查询实体类
+            </summary>
+        </member>
+        <member name="T:BenXinLims.Application.TestList.TestListItemEntry">
+             <summary>
+             检测单包含的分析表
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.TestList.TestListItemEntry.Id">
+             <summary>
+             自增主键 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.TestList.TestListItemEntry.TestListId">
+             <summary>
+             检测单id 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.TestList.TestListItemEntry.TestListName">
+             <summary>
+             检测单名称 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.TestList.TestListItemEntry.AnalysisName">
+             <summary>
+             检测名称 
+            </summary>
+        </member>
+        <member name="T:BenXinLims.Application.TestList.TestListServices">
+            <summary>
+            检测单服务
+            </summary>
+        </member>
+        <member name="M:BenXinLims.Application.TestList.TestListServices.getAllTestList(BenXinLims.Application.TestList.TestListQueryDto)">
+            <summary>
+            获取所有检测单列表
+            </summary>
+            <param name="query"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Application.TestList.TestListServices.addTestList(BenXinLims.Application.TestList.TestListEntry)">
+            <summary>
+            添加检测单
+            </summary>
+            <param name="entry"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Application.TestList.TestListServices.updateTestList(BenXinLims.Application.TestList.TestListEntry)">
+            <summary>
+            更新检测单
+            </summary>
+            <param name="entry"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Application.TestList.TestListServices.deleteTestList(System.Int32)">
+            <summary>
+            删除检测单,同时删除检测单分项
+            </summary>
+            <param name="id"></param>
             <returns></returns>
         </member>
         <member name="T:BenXinLims.Application.Test.testServices">
