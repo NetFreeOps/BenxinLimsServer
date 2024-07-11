@@ -65,10 +65,27 @@ export default defineUserConfig({
         text:'数据库文档',
         link:'/database/tables',
         children:[
-          {text:'列表',link:'/database/lims-list'},
-          {text:'列表项',link:'/database/lims-list-item'},
-          {text:'分析表',link:'/database/analysis'},
-          {text:'分析表分项',link:'/database/analysis-item'}
+          { text: 'Sys user config', link: '/database/sys_user_config' },
+          { text: 'Sys user', link: '/database/sys_user' },
+          { text: 'Sys login log', link: '/database/sys_login_log' },
+          { text: 'Sys role button', link: '/database/sys_role_button' },
+          { text: 'Sys role data', link: '/database/sys_role_data' },
+          { text: 'Sys role menu', link: '/database/sys_role_menu' },
+          { text: 'Sys roles', link: '/database/sys_roles' },
+          { text: 'Sys user role', link: '/database/sys_user_role' },
+          { text: 'Sys user workflow', link: '/database/sys_user_workflow' },
+          { text: 'Analysis', link: '/database/analysis' },
+          { text: 'Lims list', link: '/database/lims_list' },
+          { text: 'Lims list item', link: '/database/lims_list_item' },
+          { text: 'Analysis calc', link: '/database/analysis_calc' },
+          { text: 'Analysis item', link: '/database/analysis_item' },
+          { text: 'Common calc', link: '/database/common_calc' },
+          { text: 'Process unit', link: '/database/process_unit' },
+          { text: 'Product', link: '/database/product' },
+          { text: 'Test list', link: '/database/test_list' },
+          { text: 'Test list item', link: '/database/test_list_item' },
+          { text: 'User post', link: '/database/user_post' }
+          
         ]
       }
     ]
