@@ -35,6 +35,11 @@ namespace BenXinLims.Application.TestList
         public async Task<int> addTestList(TestListEntry entry)
         {
             var db = DbContext.Instance;
+            // 检查名称是否重复
+            if(await db.Queryable<TestListEntry>().Where(it => it.Name == entry.Name).AnyAsync())
+            {
+                throw new Exception("检测单名称重复");
+            }
             var id = await db.Insertable(entry).ExecuteReturnIdentityAsync();
             return id;
         }
@@ -46,7 +51,11 @@ namespace BenXinLims.Application.TestList
         public async Task<int> updateTestList(TestListEntry entry)
         {
             var db = DbContext.Instance;
-            var id = await db.Updateable(entry).ExecuteCommandAsync();
+            // 检查检测单是否存在
+            if(await db.Queryable<TestListEntry>().Where(x => x.Name == entry.Name && x.Id != entry.Id).AnyAsync()) { 
+                throw new Exception("检测单名称重复");
+            }
+            var id = await db.Updateable(entry).IgnoreColumns(ignoreAllNullColumns:true). ExecuteCommandAsync();
             return id;
         }
         /// <summary>

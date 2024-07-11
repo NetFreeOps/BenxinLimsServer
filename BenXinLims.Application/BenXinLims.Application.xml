@@ -361,10 +361,176 @@
             <param name="id"></param>
             <returns></returns>
         </member>
+        <member name="T:BenXinLims.Application.ProcessUnit.ProcessUnitEntry">
+             <summary>
+             装置实体类
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.ProcessUnit.ProcessUnitEntry.Id">
+             <summary>
+             自增主键 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.ProcessUnit.ProcessUnitEntry.ParentId">
+             <summary>
+             父装置ID，没有为0 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.ProcessUnit.ProcessUnitEntry.Name">
+             <summary>
+             装置名 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.ProcessUnit.ProcessUnitEntry.Code">
+             <summary>
+             装置代码 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.ProcessUnit.ProcessUnitEntry.Active">
+             <summary>
+             是否激活 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.ProcessUnit.ProcessUnitEntry.Template">
+             <summary>
+             装置模板 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.ProcessUnit.ProcessUnitEntry.AliasName">
+             <summary>
+             别名 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.ProcessUnit.ProcessUnitEntry.WorkShop">
+             <summary>
+             所属公司 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.ProcessUnit.ProcessUnitEntry.IsEnd">
+             <summary>
+             是否是末端装置 
+            </summary>
+        </member>
+        <member name="T:BenXinLims.Application.ProcessUnit.ProcessUnitServices">
+            <summary>
+            装置层级管理-从最上级开始，逐级到最下级
+            </summary>
+        </member>
+        <member name="M:BenXinLims.Application.ProcessUnit.ProcessUnitServices.GetProcessUnit(BenXinLims.Application.ProcessUnit.ProcessUnitEntry)">
+            <summary>
+            获取装置列表
+            </summary>
+            <param name="unitEntry"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Application.ProcessUnit.ProcessUnitServices.AddProcessUnit(BenXinLims.Application.ProcessUnit.ProcessUnitEntry)">
+            <summary>
+            添加装置
+            </summary>
+            <param name="unitEntry"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Application.ProcessUnit.ProcessUnitServices.UpdateProcessUnit(BenXinLims.Application.ProcessUnit.ProcessUnitEntry)">
+            <summary>
+            更新装置
+            </summary>
+            <param name="unitEntry"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Application.ProcessUnit.ProcessUnitServices.DeleteProcessUnit(BenXinLims.Application.ProcessUnit.ProcessUnitEntry)">
+            <summary>
+            逻辑删除装置
+            </summary>
+            <param name="unitEntry"></param>
+            <returns></returns>
+        </member>
+        <member name="T:BenXinLims.Application.Product.ProductEntry">
+             <summary>
+             产品实体类
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Product.ProductEntry.Id">
+             <summary>
+             自增主键 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Product.ProductEntry.Name">
+             <summary>
+             产品名称 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Product.ProductEntry.AliasName">
+             <summary>
+             别名 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Product.ProductEntry.Code">
+             <summary>
+             产品代码 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Product.ProductEntry.TestListName">
+             <summary>
+             检测单名称 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Product.ProductEntry.Active">
+             <summary>
+             是否激活 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Product.ProductEntry.Version">
+             <summary>
+             版本 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Product.ProductEntry.Description">
+             <summary>
+             描述信息 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Product.ProductEntry.FileLink">
+             <summary>
+             文件链接 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Product.ProductEntry.Grade">
+             <summary>
+             等级模板 
+            </summary>
+        </member>
         <member name="T:BenXinLims.Application.Product.ProductServices">
             <summary>
             产品管理服务
             </summary>
+        </member>
+        <member name="M:BenXinLims.Application.Product.ProductServices.getAllProduct(BenXinLims.Application.Product.ProductEntry)">
+            <summary>
+            获取所有产品列表
+            </summary>
+            <param name="productEntry"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Application.Product.ProductServices.UpdateProduct(BenXinLims.Application.Product.ProductEntry)">
+            <summary>
+            更新产品
+            </summary>
+            <param name="productEntry"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Application.Product.ProductServices.InsertProduct(BenXinLims.Application.Product.ProductEntry)">
+            <summary>
+            添加产品
+            </summary>
+            <param name="productEntry"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Application.Product.ProductServices.DeleteProduct(BenXinLims.Application.Product.ProductEntry)">
+            <summary>
+            逻辑删除产品
+            </summary>
+            <param name="productEntry"></param>
+            <returns></returns>
         </member>
         <member name="T:BenXinLims.Application.sampleServices">
             <summary>
