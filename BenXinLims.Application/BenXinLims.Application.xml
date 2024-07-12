@@ -361,6 +361,79 @@
             <param name="id"></param>
             <returns></returns>
         </member>
+        <member name="T:BenXinLims.Application.Post.PostServices">
+            <summary>
+            用户-岗位对应关系添加服务
+            </summary>
+        </member>
+        <member name="M:BenXinLims.Application.Post.PostServices.GetPostByUser(BenXinLims.Application.Post.userQueryDto)">
+            <summary>
+            根据用户查询用户岗位
+            </summary>
+            <param name="userQuery"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Application.Post.PostServices.GetUserByPost(BenXinLims.Application.Post.postQueryDto)">
+            <summary>
+            根据岗位查询岗位用户
+            </summary>
+            <param name="postQuery"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Application.Post.PostServices.InsertUserPost(BenXinLims.Application.Post.UserPostEntry)">
+            <summary>
+            添加一条记录
+            </summary>
+            <param name="userPost"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Application.Post.PostServices.DeleteAsync(BenXinLims.Application.Post.UserPostEntry)">
+            <summary>
+            删除一条记录
+            </summary>
+            <param name="userPost"></param>
+            <returns></returns>
+        </member>
+        <member name="T:BenXinLims.Application.Post.UserPostEntry">
+             <summary>
+             用户-岗位对应实体类
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Post.UserPostEntry.Id">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Post.UserPostEntry.UserId">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Post.UserPostEntry.UserName">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Post.UserPostEntry.PostId">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Post.UserPostEntry.PostName">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="T:BenXinLims.Application.Post.userQueryDto">
+            <summary>
+            根据用户查询岗位
+            </summary>
+        </member>
+        <member name="T:BenXinLims.Application.Post.postQueryDto">
+            <summary>
+            根据岗位查询用户
+            </summary>
+        </member>
         <member name="T:BenXinLims.Application.ProcessUnit.ProcessUnitEntry">
              <summary>
              装置实体类
