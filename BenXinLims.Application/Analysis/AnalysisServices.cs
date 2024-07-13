@@ -12,6 +12,12 @@ namespace BenXinLims.Application.Analysis
     /// </summary>
     public class AnalysisServices : IDynamicApiController, ITransient
     {
+        // 注入数据库上下文
+        private readonly ISqlSugarClient _dbContext;
+        public AnalysisServices(ISqlSugarClient dbContext)
+        {
+            _dbContext = dbContext;
+        }
         /// <summary>
         /// 建立新分析
         /// </summary>
@@ -19,8 +25,8 @@ namespace BenXinLims.Application.Analysis
         /// <returns></returns>
         public async Task<int> createAnalysis(AnalysisEntry analysisEntry)
         {
-            var db = DbContext.Instance;
-            int res = await db.Insertable(analysisEntry).ExecuteCommandAsync();
+           // var db = DbContext.Instance;
+            int res = await _dbContext.Insertable(analysisEntry).ExecuteCommandAsync();
             return res;
         }
         /// <summary>
@@ -30,9 +36,9 @@ namespace BenXinLims.Application.Analysis
         /// <returns></returns>
         public async Task<int> deleteAnalysis(int id)
         {
-            var db = DbContext.Instance;
+           // var db = DbContext.Instance;
             //int ressub = await db.Deleteable<AnalysisEntry>().Where(.ExecuteCommandAsync();
-            int res = await db.Deleteable<AnalysisEntry>().Where(it => it.Id == id).ExecuteCommandAsync();
+            int res = await _dbContext.Deleteable<AnalysisEntry>().Where(it => it.Id == id).ExecuteCommandAsync();
             return res;
         }
         /// <summary>
@@ -41,8 +47,8 @@ namespace BenXinLims.Application.Analysis
         /// <returns></returns>
         public async Task<List<AnalysisEntry>> getAnalysisList()
         {
-            var db = DbContext.Instance;
-            var list = await db.Queryable<AnalysisEntry>().ToListAsync();
+           // var db = DbContext.Instance;
+            var list = await _dbContext.Queryable<AnalysisEntry>().ToListAsync();
             return list;
         }
         /// <summary>
@@ -52,9 +58,9 @@ namespace BenXinLims.Application.Analysis
         /// <returns></returns>
         public async Task<int> updateAnalysis(AnalysisEntry analysisEntry)
         {
-            var db = DbContext.Instance;
+           // var db = DbContext.Instance;
 
-            int res = await db.Updateable(analysisEntry).IgnoreColumns(ignoreAllNullColumns: true).ExecuteCommandAsync();
+            int res = await _dbContext.Updateable(analysisEntry).IgnoreColumns(ignoreAllNullColumns: true).ExecuteCommandAsync();
             return res;
         }
         /// <summary>
@@ -64,14 +70,14 @@ namespace BenXinLims.Application.Analysis
         /// <returns></returns>
         public async Task<int> addItemToAnalysis(AnalysisItemEntry analysisItem)
         {
-            var db = DbContext.Instance;
+           // var db = DbContext.Instance;
             // 检查分项是否存在
-            var item = await db.Queryable<AnalysisItemEntry>().Where(it => it.AnalysisName == analysisItem.AnalysisName && it.Name == analysisItem.Name).FirstAsync();
+            var item = await _dbContext.Queryable<AnalysisItemEntry>().Where(it => it.AnalysisName == analysisItem.AnalysisName && it.Name == analysisItem.Name).FirstAsync();
             if (item != null)
             {
                 return -1;
             }
-            int res = await db.Insertable(analysisItem).ExecuteCommandAsync();
+            int res = await _dbContext.Insertable(analysisItem).ExecuteCommandAsync();
             return res;
         }
         /// <summary>
@@ -81,8 +87,8 @@ namespace BenXinLims.Application.Analysis
         /// <returns></returns>
         public Task<int> deleteItemFromAnalysis(int id)
         {
-            var db = DbContext.Instance;
-            return db.Deleteable<AnalysisItemEntry>().Where(it => it.Id == id).ExecuteCommandAsync();
+          //  var db = DbContext.Instance;
+            return _dbContext.Deleteable<AnalysisItemEntry>().Where(it => it.Id == id).ExecuteCommandAsync();
         }
         /// <summary>
         /// 根据分析名称获取分析的分项列表
@@ -91,8 +97,8 @@ namespace BenXinLims.Application.Analysis
         /// <returns></returns>
         public async Task<List<AnalysisItemEntry>> getItemListFromAnalysis(string analysisName)
         {
-            var db = DbContext.Instance;
-            var list = await db.Queryable<AnalysisItemEntry>()
+           // var db = DbContext.Instance;
+            var list = await _dbContext.Queryable<AnalysisItemEntry>()
                 .Where(it => it.AnalysisName == analysisName)
                 .ToListAsync();
             return list;
@@ -105,14 +111,15 @@ namespace BenXinLims.Application.Analysis
         /// <returns></returns>
         public async Task<int> updateItemFromAnalysis(AnalysisItemEntry analysisItem)
         {
-            var db = DbContext.Instance;
+          //  var db = DbContext.Instance;
             // 检查分项是否存在
-            var item = await db.Queryable<AnalysisItemEntry>().Where(it => it.AnalysisName == analysisItem.AnalysisName && it.Name == analysisItem.Name).FirstAsync();
+            var item = await _dbContext.Queryable<AnalysisItemEntry>().Where(it => it.AnalysisName == analysisItem.AnalysisName && it.Name == analysisItem.Name && it.Id != analysisItem.Id).FirstAsync();
             if (item == null)
             {
                 return -1;
             }
-            return await db.Updateable(analysisItem).IgnoreColumns(ignoreAllNullColumns: true).ExecuteCommandAsync();
+            int res = await _dbContext.Updateable(analysisItem).IgnoreColumns(ignoreAllNullColumns: true).ExecuteCommandAsync();
+            return res;
         }
         // 为分析分配人员
         public Task<string> addUserToAnalysis(string analysis)

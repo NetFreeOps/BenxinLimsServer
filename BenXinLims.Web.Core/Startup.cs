@@ -1,4 +1,5 @@
-﻿using BenXinLims.Core.EventBus;
+﻿using BenXinLims.Core;
+using BenXinLims.Core.EventBus;
 using BenXinLims.Core.Job;
 using Furion;
 using Furion.Schedule;
@@ -6,6 +7,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using SqlSugar;
 
 namespace BenXinLims.Web.Core
 {
@@ -24,7 +26,8 @@ namespace BenXinLims.Web.Core
                
 
             });
-
+            // 数据库上下文注册
+            services.AddSingleton<ISqlSugarClient>(DbContext.Instance);
             // 事件总线服务
             services.AddEventBus(builder => { builder.AddSubscriber<LogEventSubscriber>(); });
 
