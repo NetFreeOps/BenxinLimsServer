@@ -115,7 +115,7 @@ namespace BenXinLims.Application.Analysis
             // 检查分项是否存在
             var item = await _dbContext.Queryable<AnalysisItemEntry>().Where(it => it.AnalysisName == analysisItem.AnalysisName && it.Name == analysisItem.Name && it.Id != analysisItem.Id).FirstAsync();
            
-            if (await _dbContext.Queryable<AnalysisItemEntry>().Where(it =>it.AnalysisName == analysisItem.AnalysisName && it.Name == ))
+            if (await _dbContext.Queryable<AnalysisItemEntry>().Where(it =>it.AnalysisName == analysisItem.AnalysisName && it.Name == analysisItem.Name).AnyAsync())
             {
                 return -1;
             }
