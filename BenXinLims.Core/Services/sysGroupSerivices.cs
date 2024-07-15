@@ -10,7 +10,7 @@ namespace BenXinLims.Core.Services
     /// <summary>
     /// 部门管理服务
     /// </summary>
-    public class sysGroupSerivices : IDynamicApiController
+    public class sysGroupServices : IDynamicApiController
     {
         /// <summary>
         /// 获取所有部门列表

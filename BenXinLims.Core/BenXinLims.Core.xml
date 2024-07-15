@@ -684,33 +684,33 @@
             移除动态程序集 WebAPI/Controller
             </summary>
         </member>
-        <member name="T:BenXinLims.Core.Services.sysGroupSerivices">
+        <member name="T:BenXinLims.Core.Services.sysGroupServices">
             <summary>
             部门管理服务
             </summary>
         </member>
-        <member name="M:BenXinLims.Core.Services.sysGroupSerivices.GetGroupList(BenXinLims.Core.Entry.sysGroupQueryEntry)">
+        <member name="M:BenXinLims.Core.Services.sysGroupServices.GetGroupList(BenXinLims.Core.Entry.sysGroupQueryEntry)">
             <summary>
             获取所有部门列表
             </summary>
             <param name="query"></param>
             <returns></returns>
         </member>
-        <member name="M:BenXinLims.Core.Services.sysGroupSerivices.UpdateGroup(BenXinLims.Core.Entry.SysGroupEntry)">
+        <member name="M:BenXinLims.Core.Services.sysGroupServices.UpdateGroup(BenXinLims.Core.Entry.SysGroupEntry)">
             <summary>
             更新部门信息
             </summary>
             <param name="sysGroup"></param>
             <returns></returns>
         </member>
-        <member name="M:BenXinLims.Core.Services.sysGroupSerivices.AddGroup(BenXinLims.Core.Entry.SysGroupEntry)">
+        <member name="M:BenXinLims.Core.Services.sysGroupServices.AddGroup(BenXinLims.Core.Entry.SysGroupEntry)">
             <summary>
             添加部门
             </summary>
             <param name="sysGroup"></param>
             <returns></returns>
         </member>
-        <member name="M:BenXinLims.Core.Services.sysGroupSerivices.DeleteGroup(System.Int32)">
+        <member name="M:BenXinLims.Core.Services.sysGroupServices.DeleteGroup(System.Int32)">
             <summary>
             逻辑删除部门
             </summary>
