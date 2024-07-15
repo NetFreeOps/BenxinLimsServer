@@ -29,6 +29,11 @@ namespace BenXinLims.Core.Entry
         [SugarColumn(ColumnName = "config_type")]
         public string ConfigType { get; set; }
         /// <summary>
+        /// 描述信息
+        /// </summary>
+        [SugarColumn(ColumnName = "description")]
+        public string Description { get; set; }
+        /// <summary>
         /// 配置字段名 
         ///</summary>
         [SugarColumn(ColumnName = "config_field")]

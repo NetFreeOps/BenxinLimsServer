@@ -252,9 +252,16 @@
             <param name="query"></param>
             <returns></returns>
         </member>
-        <member name="M:BenXinLims.Application.ConfigCenter.ConfigCenterServices.UpdateConfig(System.Collections.Generic.List{BenXinLims.Core.Entry.sysUserConfigEntry})">
+        <member name="M:BenXinLims.Application.ConfigCenter.ConfigCenterServices.UpdateConfig(BenXinLims.Core.Entry.sysUserConfigEntry)">
             <summary>
-            批量更新或插入配置项
+            更新配置项
+            </summary>
+            <param name="configs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Application.ConfigCenter.ConfigCenterServices.InsertConfig(BenXinLims.Core.Entry.sysUserConfigEntry)">
+            <summary>
+            插入配置项
             </summary>
             <param name="configs"></param>
             <returns></returns>
@@ -284,6 +291,11 @@
         <member name="P:BenXinLims.Application.ConfigCenter.SysUserConfig.ConfigType">
              <summary>
              配置类型 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.ConfigCenter.SysUserConfig.Description">
+            <summary>
+            描述信息
             </summary>
         </member>
         <member name="P:BenXinLims.Application.ConfigCenter.SysUserConfig.ConfigField">

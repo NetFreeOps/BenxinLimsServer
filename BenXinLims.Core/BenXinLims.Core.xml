@@ -324,6 +324,11 @@
              配置类型 
             </summary>
         </member>
+        <member name="P:BenXinLims.Core.Entry.sysUserConfigEntry.Description">
+            <summary>
+            描述信息
+            </summary>
+        </member>
         <member name="P:BenXinLims.Core.Entry.sysUserConfigEntry.ConfigField">
              <summary>
              配置字段名 
