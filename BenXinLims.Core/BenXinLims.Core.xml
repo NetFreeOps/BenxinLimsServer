@@ -169,6 +169,56 @@
               
             </summary>
         </member>
+        <member name="T:BenXinLims.Core.Entry.SysGroupEntry">
+             <summary>
+             部门实体类
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.SysGroupEntry.Id">
+             <summary>
+             自增主键 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.SysGroupEntry.ParentId">
+             <summary>
+             上级部门ID，没有为0 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.SysGroupEntry.Name">
+             <summary>
+             部门名称 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.SysGroupEntry.Code">
+             <summary>
+             部门代码 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.SysGroupEntry.Active">
+             <summary>
+             是否激活 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.SysGroupEntry.AliasName">
+             <summary>
+             别名 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.SysGroupEntry.WorkShop">
+             <summary>
+             所属公司 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.SysGroupEntry.IsEnd">
+             <summary>
+             是否是末端部门 
+            </summary>
+        </member>
+        <member name="T:BenXinLims.Core.Entry.sysGroupQueryEntry">
+            <summary>
+            部门查询条件
+            </summary>
+        </member>
         <member name="T:BenXinLims.Core.Entry.SysLoginLogEntry">
              <summary>
              
@@ -459,6 +509,36 @@
              配置状态（-1待发布，0禁用，1启用 
             </summary>
         </member>
+        <member name="T:BenXinLims.Core.Entry.SysWorkShopEntry">
+             <summary>
+             公司实体类
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.SysWorkShopEntry.Id">
+             <summary>
+             自增主键 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.SysWorkShopEntry.Name">
+             <summary>
+             公司名称 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.SysWorkShopEntry.Code">
+             <summary>
+             公司代码 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.SysWorkShopEntry.Active">
+             <summary>
+             是否激活 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.SysWorkShopEntry.AliasName">
+             <summary>
+             别名 
+            </summary>
+        </member>
         <member name="F:BenXinLims.Core.Enum.ErrorCode.D1000">
             <summary>
             用户名或密码错误
@@ -604,6 +684,39 @@
             移除动态程序集 WebAPI/Controller
             </summary>
         </member>
+        <member name="T:BenXinLims.Core.Services.sysGroupSerivices">
+            <summary>
+            部门管理服务
+            </summary>
+        </member>
+        <member name="M:BenXinLims.Core.Services.sysGroupSerivices.GetGroupList(BenXinLims.Core.Entry.sysGroupQueryEntry)">
+            <summary>
+            获取所有部门列表
+            </summary>
+            <param name="query"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Core.Services.sysGroupSerivices.UpdateGroup(BenXinLims.Core.Entry.SysGroupEntry)">
+            <summary>
+            更新部门信息
+            </summary>
+            <param name="sysGroup"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Core.Services.sysGroupSerivices.AddGroup(BenXinLims.Core.Entry.SysGroupEntry)">
+            <summary>
+            添加部门
+            </summary>
+            <param name="sysGroup"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Core.Services.sysGroupSerivices.DeleteGroup(System.Int32)">
+            <summary>
+            逻辑删除部门
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
         <member name="T:BenXinLims.Core.Services.sysRoleService">
             <summary>
             角色服务
@@ -669,6 +782,38 @@
             添加角色菜单
             </summary>
             <param name="roleMenu"></param>
+            <returns></returns>
+        </member>
+        <member name="T:BenXinLims.Core.Services.sysWorkShopServices">
+            <summary>
+            公司管理服务
+            </summary>
+        </member>
+        <member name="M:BenXinLims.Core.Services.sysWorkShopServices.GetWrokShopList">
+            <summary>
+            获取所有公司列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Core.Services.sysWorkShopServices.UpdateWrokShop(BenXinLims.Core.Entry.SysWorkShopEntry)">
+            <summary>
+            更新公司信息
+            </summary>
+            <param name="entry"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Core.Services.sysWorkShopServices.AddWrokShop(BenXinLims.Core.Entry.SysWorkShopEntry)">
+            <summary>
+            插入一条公司记录
+            </summary>
+            <param name="entry"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Core.Services.sysWorkShopServices.DeleteWrokShop(System.Int32)">
+            <summary>
+            逻辑删除公司信息-公司创建后原则上不允许删除
+            </summary>
+            <param name="id"></param>
             <returns></returns>
         </member>
     </members>
