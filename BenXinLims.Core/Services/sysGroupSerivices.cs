@@ -24,7 +24,7 @@ namespace BenXinLims.Core.Services
                 .WhereIF(!string.IsNullOrEmpty(query.Name), it => it.Name == query.Name)
                 .WhereIF(!string.IsNullOrEmpty(query.Code), it => it.Code == query.Code)
                 .WhereIF(!string.IsNullOrEmpty(query.AliasName), it => it.AliasName == query.AliasName)
-                .WhereIF(!string.IsNullOrEmpty(query.WorkShop), it => it.AliasName == query.AliasName)
+                .WhereIF(!string.IsNullOrEmpty(query.WorkShop), it => it.WorkShop == query.WorkShop)
 
                 .ToListAsync();
             return lists;
