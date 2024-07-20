@@ -37,7 +37,8 @@ namespace BenXinLims.Application.Post
             {
                 throw Oops.Oh("岗位代码重复");
             }
-            // 已经分配岗位的不能更改
+            // 已经分配岗位的不能更改-有问题，应该获取修改前的岗位名称
+
             if(await db.Queryable<UserPostEntry>().Where(it => it.PostName == post.PostName ).AnyAsync())
             {
                 throw Oops.Oh("该岗位已经使用，不允许更改");
