@@ -439,10 +439,68 @@
             <param name="id"></param>
             <returns></returns>
         </member>
+        <member name="T:BenXinLims.Application.Post.PostEntry">
+             <summary>
+             岗位表
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Post.PostEntry.Id">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Post.PostEntry.PostName">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Post.PostEntry.PostCode">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Post.PostEntry.Description">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Post.PostEntry.Active">
+             <summary>
+              
+            </summary>
+        </member>
         <member name="T:BenXinLims.Application.Post.PostServices">
             <summary>
             用户-岗位对应关系添加服务
             </summary>
+        </member>
+        <member name="M:BenXinLims.Application.Post.PostServices.GetPostsList(BenXinLims.Application.Post.PostEntry)">
+            <summary>
+            获取所有岗位
+            </summary>
+            <param name="post"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Application.Post.PostServices.UpdatePost(BenXinLims.Application.Post.PostEntry)">
+            <summary>
+            更新岗位信息
+            </summary>
+            <param name="post"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Application.Post.PostServices.AddPost(BenXinLims.Application.Post.PostEntry)">
+            <summary>
+            添加岗位
+            </summary>
+            <param name="post"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Application.Post.PostServices.DeletePost(BenXinLims.Application.Post.PostEntry)">
+            <summary>
+            删除岗位
+            </summary>
+            <param name="post"></param>
+            <returns></returns>
         </member>
         <member name="M:BenXinLims.Application.Post.PostServices.GetPostByUser(BenXinLims.Application.Post.userQueryDto)">
             <summary>
