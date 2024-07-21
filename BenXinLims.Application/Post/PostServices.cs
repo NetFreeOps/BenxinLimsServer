@@ -37,12 +37,15 @@ namespace BenXinLims.Application.Post
             {
                 throw Oops.Oh("岗位代码重复");
             }
-            // 已经分配岗位的不能更改-有问题，应该获取修改前的岗位名称
-
-            if(await db.Queryable<UserPostEntry>().Where(it => it.PostName == post.PostName ).AnyAsync())
+            // 查询id对应的岗位名称
+            var postName = await db.Queryable<PostEntry>().Where(it => it.Id == post.Id).Select(it => it.PostName).FirstAsync();
+            // 根据岗位名称查询是否已经分配
+            if (await db.Queryable<UserPostEntry>().Where(it => it.PostName == postName).AnyAsync())
             {
                 throw Oops.Oh("该岗位已经使用，不允许更改");
             }
+           
+           
             // 岗位名称不能重复
             if (await db.Queryable<PostEntry>().Where(it => it.PostName == post.PostName && it.Id != post.Id).AnyAsync())
             {
@@ -116,7 +119,7 @@ namespace BenXinLims.Application.Post
             return list;
         }
         /// <summary>
-        /// 添加一条记录
+        /// 添加一条岗位-人员分配，postid取postcode，userid取userid
         /// </summary>
         /// <param name="userPost"></param>
         /// <returns></returns>
@@ -131,7 +134,7 @@ namespace BenXinLims.Application.Post
             return await db.Insertable(userPost).ExecuteCommandAsync();
         }
         /// <summary>
-        /// 删除一条记录
+        /// 删除一条岗位-人员分配，postid取postcode，userid取userid
         /// </summary>
         /// <param name="userPost"></param>
         /// <returns></returns>
