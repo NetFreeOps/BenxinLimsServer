@@ -16,9 +16,8 @@ namespace BenXinLims.Application.Post
         /// <summary>
         /// 获取所有岗位
         /// </summary>
-        /// <param name="post"></param>
         /// <returns></returns>
-        public async Task<dynamic> GetPostsList(PostEntry post)
+        public async Task<dynamic> GetPostsList()
         {
             var db = DbContext.Instance;
             var list = await db.Queryable<PostEntry>().ToListAsync();

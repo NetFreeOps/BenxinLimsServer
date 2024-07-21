@@ -474,11 +474,10 @@
             用户-岗位对应关系添加服务
             </summary>
         </member>
-        <member name="M:BenXinLims.Application.Post.PostServices.GetPostsList(BenXinLims.Application.Post.PostEntry)">
+        <member name="M:BenXinLims.Application.Post.PostServices.GetPostsList">
             <summary>
             获取所有岗位
             </summary>
-            <param name="post"></param>
             <returns></returns>
         </member>
         <member name="M:BenXinLims.Application.Post.PostServices.UpdatePost(BenXinLims.Application.Post.PostEntry)">
@@ -518,14 +517,14 @@
         </member>
         <member name="M:BenXinLims.Application.Post.PostServices.InsertUserPost(BenXinLims.Application.Post.UserPostEntry)">
             <summary>
-            添加一条记录
+            添加一条岗位-人员分配，postid取postcode，userid取userid
             </summary>
             <param name="userPost"></param>
             <returns></returns>
         </member>
         <member name="M:BenXinLims.Application.Post.PostServices.DeleteAsync(BenXinLims.Application.Post.UserPostEntry)">
             <summary>
-            删除一条记录
+            删除一条岗位-人员分配，postid取postcode，userid取userid
             </summary>
             <param name="userPost"></param>
             <returns></returns>
