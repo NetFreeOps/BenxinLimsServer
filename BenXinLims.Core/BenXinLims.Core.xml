@@ -784,6 +784,32 @@
             <param name="roleMenu"></param>
             <returns></returns>
         </member>
+        <member name="T:BenXinLims.Core.Services.sysUserService">
+            <summary>
+            用户服务
+            </summary>
+        </member>
+        <member name="M:BenXinLims.Core.Services.sysUserService.GetUserList(BenXinLims.Core.Entry.sysUserQueryEntry)">
+            <summary>
+            获取用户列表
+            </summary>
+            <param name="query"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Core.Services.sysUserService.AddUser(BenXinLims.Core.Entry.sysUserEntry)">
+            <summary>
+            添加用户
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Core.Services.sysUserService.UpdateUser(BenXinLims.Core.Entry.sysUserEntry)">
+            <summary>
+            更新用户信息
+            </summary>
+            <param name="user"></param> 
+            <returns></returns>
+        </member>
         <member name="T:BenXinLims.Core.Services.sysWorkShopServices">
             <summary>
             公司管理服务

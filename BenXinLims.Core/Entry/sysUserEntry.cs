@@ -83,7 +83,7 @@ namespace BenXinLims.Core.Entry
     /// <summary>
     /// 用户查询实体类
     /// </summary>
-    public class sysUserQueryEntry
+    public class sysUserQueryEntry:PageEntityBase
     {
         public string UserId { get; set; }
         public string UserName { get; set; }
