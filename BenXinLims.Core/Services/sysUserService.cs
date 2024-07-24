@@ -74,5 +74,44 @@ namespace BenXinLims.Core.Services
             await db.Updateable(user).ExecuteCommandAsync();
             return "更新成功";
         }
+        /// <summary>
+        /// 添加一条用户部门记录
+        /// </summary>
+        /// <param name="userDept"></param>
+        /// <returns></returns>
+        public async Task<string> AddUserGroup([FromBody] SysUserGroupEntry userDept)
+        {
+            var db = DbContext.Instance;
+            await db.Insertable(userDept).ExecuteCommandAsync();
+            return "添加成功";
+        }
+        /// <summary>
+        /// 删除一条用户部门记录
+        /// </summary>
+        /// <param name="userDept"></param>
+        /// <returns></returns>
+        public async Task<string> DeleteUserGroup([FromBody] SysUserGroupEntry userDept)
+        {
+            var db = DbContext.Instance;
+            await db.Deleteable(userDept).ExecuteCommandAsync();
+            return "删除成功";
+        }
+
+        /// <summary>
+        /// 查询一条记录
+        /// </summary>
+        /// <param name="userGroup"></param>
+        /// <returns></returns>
+        public async Task<List<SysUserGroupEntry>> getUserGroupList([FromQuery] SysUserGroupEntry userGroup)
+        {
+            var db = DbContext.Instance;
+            return await db.Queryable<SysUserGroupEntry>()
+                .WhereIF(!string.IsNullOrEmpty(userGroup.UserName), it => it.UserName == userGroup.UserName)
+                .WhereIF(!string.IsNullOrEmpty(userGroup.UserId), it => it.UserId == userGroup.UserId)
+                .WhereIF(!string.IsNullOrEmpty(userGroup.GroupId), it => it.GroupId == userGroup.GroupId)
+                .WhereIF(!string.IsNullOrEmpty(userGroup.GroupName), it => it.GroupName == userGroup.GroupName)
+                .ToListAsync();
+        }
+       
     }
 }
