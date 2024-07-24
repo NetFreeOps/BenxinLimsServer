@@ -464,6 +464,36 @@
             用户查询实体类
             </summary>
         </member>
+        <member name="T:BenXinLims.Core.Entry.SysUserGroupEntry">
+             <summary>
+             用户部门实体类
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.SysUserGroupEntry.Id">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.SysUserGroupEntry.UserId">
+             <summary>
+             用工号 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.SysUserGroupEntry.UserName">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.SysUserGroupEntry.GroupId">
+             <summary>
+             用岗位代码 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Core.Entry.SysUserGroupEntry.GroupName">
+             <summary>
+              
+            </summary>
+        </member>
         <member name="T:BenXinLims.Core.Entry.sysUserRoleEntry">
              <summary>
              
@@ -808,6 +838,27 @@
             更新用户信息
             </summary>
             <param name="user"></param> 
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Core.Services.sysUserService.AddUserGroup(BenXinLims.Core.Entry.SysUserGroupEntry)">
+            <summary>
+            添加一条用户部门记录
+            </summary>
+            <param name="userDept"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Core.Services.sysUserService.DeleteUserGroup(BenXinLims.Core.Entry.SysUserGroupEntry)">
+            <summary>
+            删除一条用户部门记录
+            </summary>
+            <param name="userDept"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Core.Services.sysUserService.getUserGroupList(BenXinLims.Core.Entry.SysUserGroupEntry)">
+            <summary>
+            查询一条记录
+            </summary>
+            <param name="userGroup"></param>
             <returns></returns>
         </member>
         <member name="T:BenXinLims.Core.Services.sysWorkShopServices">
