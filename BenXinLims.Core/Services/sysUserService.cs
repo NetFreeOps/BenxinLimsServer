@@ -82,6 +82,12 @@ namespace BenXinLims.Core.Services
         public async Task<string> AddUserGroup([FromBody] SysUserGroupEntry userDept)
         {
             var db = DbContext.Instance;
+            //检查相同记录是否存在
+            var isExist = await db.Queryable<SysUserGroupEntry>().AnyAsync(it => it.UserId == userDept.UserId && it.GroupId == userDept.GroupId);
+            if (isExist)
+            {
+                return "记录重复";
+            }
             await db.Insertable(userDept).ExecuteCommandAsync();
             return "添加成功";
         }
