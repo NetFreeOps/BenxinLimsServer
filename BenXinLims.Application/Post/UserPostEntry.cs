@@ -21,7 +21,7 @@ namespace BenXinLims.Application.Post
         ///  
         ///</summary>
         [SugarColumn(ColumnName = "user_id")]
-        public int? UserId { get; set; }
+        public string UserId { get; set; }
         /// <summary>
         ///  
         ///</summary>
@@ -31,7 +31,7 @@ namespace BenXinLims.Application.Post
         ///  
         ///</summary>
         [SugarColumn(ColumnName = "post_id")]
-        public int? PostId { get; set; }
+        public string PostId { get; set; }
         /// <summary>
         ///  
         ///</summary>
@@ -43,7 +43,7 @@ namespace BenXinLims.Application.Post
     /// </summary>
     public class userQueryDto
     {
-        public int? user_id { get; set; }
+        public string? user_id { get; set; }
 
         public string? user_name { get; set; }
     }
@@ -52,7 +52,7 @@ namespace BenXinLims.Application.Post
     /// </summary>
     public class postQueryDto
     {
-        public int? post_id { get; set; }
+        public string? post_id { get; set; }
 
         public string? post_name { get; set; }
     }

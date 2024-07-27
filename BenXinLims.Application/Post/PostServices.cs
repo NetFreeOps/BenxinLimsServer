@@ -98,7 +98,7 @@ namespace BenXinLims.Application.Post
         {
             var db = DbContext.Instance;
             var list = await db.Queryable<UserPostEntry>()
-                .WhereIF(userQuery.user_id != -1, it => it.UserId == userQuery.user_id)
+                .WhereIF(userQuery.user_id != "-1", it => it.UserId == userQuery.user_id)
                 .WhereIF(!string.IsNullOrEmpty(userQuery.user_name), it => it.UserName == userQuery.user_name)
                 .ToListAsync();
             return list;
@@ -112,7 +112,7 @@ namespace BenXinLims.Application.Post
         {
             var db = DbContext.Instance;
             var list = await db.Queryable<UserPostEntry>()
-                .WhereIF(postQuery.post_id != -1, it => it.PostId == postQuery.post_id)
+                .WhereIF(postQuery.post_id != "-1", it => it.PostId == postQuery.post_id)
                 .WhereIF(!string.IsNullOrEmpty(postQuery.post_name), it => it.PostName == postQuery.post_name)
                 .ToListAsync();
             return list;
@@ -128,7 +128,7 @@ namespace BenXinLims.Application.Post
             //检查该记录是否存在
             if(await db.Queryable<UserPostEntry>().Where(it =>it.UserId == userPost.UserId && it.PostId == userPost.PostId).AnyAsync())
             {
-                Oops.Oh("该记录已存在");
+               throw Oops.Oh("该记录已存在");
             }
             return await db.Insertable(userPost).ExecuteCommandAsync();
         }
