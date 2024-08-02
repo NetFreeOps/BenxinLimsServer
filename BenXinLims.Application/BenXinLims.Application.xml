@@ -740,6 +740,171 @@
             <param name="productEntry"></param>
             <returns></returns>
         </member>
+        <member name="T:BenXinLims.Application.Sample.SampleEntry">
+             <summary>
+             样品实体类
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Sample.SampleEntry.SampleNumber">
+             <summary>
+             样品编号-主键 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Sample.SampleEntry.TextId">
+             <summary>
+             组合后显示值 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Sample.SampleEntry.Status">
+             <summary>
+             状态（U,I,P,C,A,E,X,R) 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Sample.SampleEntry.OldStatus">
+             <summary>
+             原状态 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Sample.SampleEntry.ParentNumber">
+             <summary>
+             父样品样品号,默认为0 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Sample.SampleEntry.InSpec">
+             <summary>
+             合格 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Sample.SampleEntry.InControl">
+             <summary>
+             内控 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Sample.SampleEntry.SampleType">
+             <summary>
+             样品分类 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Sample.SampleEntry.SampleVolume">
+             <summary>
+             样品数量 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Sample.SampleEntry.SampleUnit">
+             <summary>
+             样品单位 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Sample.SampleEntry.LoginDate">
+             <summary>
+             登记时间 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Sample.SampleEntry.LoginBy">
+             <summary>
+             登记人 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Sample.SampleEntry.SampledDate">
+             <summary>
+             样品时间（可以是取样时间） 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Sample.SampleEntry.RecivedDate">
+             <summary>
+             接收时间 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Sample.SampleEntry.RecivedBy">
+             <summary>
+             接收人 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Sample.SampleEntry.StartDate">
+             <summary>
+             开始时间，样品从I变为P的时间 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Sample.SampleEntry.EndDate">
+             <summary>
+             完成时间，样品由P变为C的时间 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Sample.SampleEntry.ReviewedDate">
+             <summary>
+             审核时间 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Sample.SampleEntry.ReviewedBy">
+             <summary>
+             审核人 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Sample.SampleEntry.ReleaseDate">
+             <summary>
+             发布时间 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Sample.SampleEntry.ReleaseBy">
+             <summary>
+             发布人 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Sample.SampleEntry.BatchId">
+             <summary>
+             批次号 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Sample.SampleEntry.ErpId">
+             <summary>
+             ERP系统ID号 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Sample.SampleEntry.OrderId">
+             <summary>
+             流水号 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Sample.SampleEntry.SampleStatus">
+             <summary>
+             样品状态 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Sample.SampleEntry.SampleTemplate">
+             <summary>
+             样品登记模板 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Sample.SampleEntry.SampleName">
+             <summary>
+             样品名称 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Sample.SampleEntry.ProductName">
+             <summary>
+             产品名称 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Sample.SampleEntry.FileLink">
+             <summary>
+             关联文件ID 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Sample.SampleEntry.ProcessUnit">
+             <summary>
+             装置名 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Sample.SampleEntry.LoginRemark">
+             <summary>
+             登记备注 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Sample.SampleEntry.ReleaseCommit">
+             <summary>
+             发布备注 
+            </summary>
+        </member>
         <member name="T:BenXinLims.Application.sampleServices">
             <summary>
             样品服务
