@@ -933,6 +933,124 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="T:BenXinLims.Application.Template.TemplateEntry">
+             <summary>
+             模板实体类
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Template.TemplateEntry.Id">
+             <summary>
+             主键 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Template.TemplateEntry.TemplateName">
+             <summary>
+             模板名称，唯一 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Template.TemplateEntry.TemplateType">
+             <summary>
+             模板类型 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Template.TemplateEntry.Description">
+             <summary>
+             描述信息 
+            </summary>
+        </member>
+        <member name="T:BenXinLims.Application.Template.TemplateItemEntry">
+             <summary>
+             模板分项实体类
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Template.TemplateItemEntry.Id">
+             <summary>
+             主键 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Template.TemplateItemEntry.TemplateId">
+             <summary>
+             模板ID 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Template.TemplateItemEntry.TemplateName">
+             <summary>
+             模板名称 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Template.TemplateItemEntry.TemplateField">
+             <summary>
+             配置字段名 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Template.TemplateItemEntry.FieleType">
+             <summary>
+             字段类型 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Template.TemplateItemEntry.DefaultValue">
+             <summary>
+             默认值 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Template.TemplateItemEntry.SourceCode">
+             <summary>
+             公式型代码 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Template.TemplateItemEntry.ListName">
+             <summary>
+             列表型的列表名称 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Template.TemplateItemEntry.ListField">
+             <summary>
+             列表型取值字段 
+            </summary>
+        </member>
+        <member name="P:BenXinLims.Application.Template.TemplateItemEntry.Status">
+             <summary>
+             状态 
+            </summary>
+        </member>
+        <member name="T:BenXinLims.Application.Template.dbField">
+            <summary>
+            数据库表结构
+            </summary>
+        </member>
+        <member name="T:BenXinLims.Application.Template.templateServices">
+            <summary>
+            模板服务
+            </summary>
+        </member>
+        <member name="M:BenXinLims.Application.Template.templateServices.GetDbFieldByTableName(System.String)">
+            <summary>
+            获取数据库表结构
+            </summary>
+            <param name="tableName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Application.Template.templateServices.GetSqlResult(System.String)">
+            <summary>
+            获取SQL查询结果
+            </summary>
+            <param name="sql"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Application.Template.templateServices.IsInvalidSql(System.String)">
+            <summary>
+            检查SQL语句是否符合条件
+            </summary>
+            <param name="sql"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Application.Template.templateServices.IsMultipleColumnsSelect(System.String)">
+            <summary>
+            检查SELECT语句是否返回多列
+            </summary>
+            <param name="sql"></param>
+            <returns></returns>
+        </member>
         <member name="T:BenXinLims.Application.TestList.TestListEntry">
              <summary>
               检测单数据表
