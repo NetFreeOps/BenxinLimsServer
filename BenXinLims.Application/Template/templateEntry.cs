@@ -107,5 +107,12 @@ namespace BenXinLims.Application.Template
         public string FieldNull { get; set; }
         public string FieldComment { get; set; }
     }
-   
+   /// <summary>
+   /// 模板查询dto
+   /// </summary>
+    public class templateQueryDto
+    {
+        public string templateName { get; set; }
+        public string templateType { get; set; }
+    }
 }

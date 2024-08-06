@@ -31,14 +31,119 @@ namespace BenXinLims.Application.Template
             var columms = db.DbMaintenance.GetColumnInfosByTableName(tableName);
             return columms;
         }
+        /// <summary>
+        /// 查询模板条件
+        /// </summary>
+        /// <param name="queryDto"></param>
+        /// <returns></returns>
+        public async Task<List<TemplateEntry>> GetTemplateList([FromQuery] templateQueryDto queryDto)
+        {
 
+            var templates = await _dbContext.Queryable<TemplateEntry>()
+                .WhereIF(!string.IsNullOrEmpty(queryDto.templateName), it => it.TemplateName.Contains(queryDto.templateName))
+                .WhereIF(!string.IsNullOrEmpty(queryDto.templateType), it => it.TemplateType.Contains(queryDto.templateType))
+                .ToListAsync();
+
+            return templates;
+        }
+
+        /// <summary>
+        /// 添加模板
+        /// </summary>
+        /// <param name="template"></param>
+        /// <returns></returns>
+        public async Task<int> AddTemplate(TemplateEntry template)
+        {
+            // 检查模板名称是否重复
+            var isExist = await _dbContext.Queryable<TemplateEntry>().AnyAsync(it => it.TemplateName == template.TemplateName);
+            if (isExist)
+            {
+                throw Oops.Oh(string.Format("模板名称{0}已存在", template.TemplateName));
+            }
+            var result = await _dbContext.Insertable(template).ExecuteReturnIdentityAsync();
+            return result;
+        }
+
+        /// <summary>
+        /// 删除模板
+        /// </summary>
+        /// <param name="templateName"></param>
+        /// <returns></returns>
+        public async Task<int> DeleteTemplate(string templateName)
+        {
+            var result = await _dbContext.Deleteable<TemplateEntry>().Where(it => it.TemplateName == templateName).ExecuteCommandAsync();
+            // 删除模板名称对应的分项
+            await _dbContext.Deleteable<TemplateItemEntry>().Where(it => it.TemplateName == templateName).ExecuteCommandAsync();
+            return result;
+        }
+
+        /// <summary>
+        /// 更新模板
+        /// </summary>
+        /// <param name="template"></param>
+        /// <returns></returns>
+        public async Task<int> UpdateTemplate(TemplateEntry template)
+        {
+            // 检查模板名称是否重复
+            var isExist = await _dbContext.Queryable<TemplateEntry>().AnyAsync(it => it.TemplateName == template.TemplateName && it.Id != template.Id);
+            if (isExist)
+            {
+                throw Oops.Oh(string.Format("模板名称{0}已存在", template.TemplateName));
+            }
+            var result = await _dbContext.Updateable(template).IgnoreColumns(ignoreAllNullColumns: true).ExecuteCommandAsync();
+            // 同步更新模板分项中的模板名称
+            var items = await _dbContext.Queryable<TemplateItemEntry>()
+                .Where(it => it.TemplateName == template.TemplateName)
+                .ToListAsync();
+            foreach (var item in items)
+            {
+                item.TemplateName = template.TemplateName;
+                await _dbContext.Updateable(item).IgnoreColumns(ignoreAllNullColumns: true).ExecuteCommandAsync();
+            }
+            return result;
+        }
+        /// <summary>
+        /// 获取模板分项值
+        /// </summary>
+        /// <param name="templateName"></param>
+        /// <returns></returns>
+
+        public async Task<List<TemplateItemEntry>> GetTemplateItemList([FromQuery] string templateName)
+        {
+            var items = await _dbContext.Queryable<TemplateItemEntry>()
+                .Where(it => it.TemplateName == templateName)
+                .ToListAsync();
+            return items;
+        }
+
+        /// <summary>
+        /// 插入模板分析
+        /// </summary>
+        /// <param name="items"></param>
+        /// <returns></returns>
+        public async Task<string> UpdateTemplateItemList(List<TemplateItemEntry> items)
+        {
+           
+            await _dbContext.Insertable(items).ExecuteCommandAsync();
+            return "success";
+        }
+        /// <summary>
+        /// 更新模板分析
+        /// </summary>
+        /// <param name="item"></param>
+        /// <returns></returns>
+        public async Task<string> UpdateTemplateItem(TemplateItemEntry item)
+        {
+            var result = await _dbContext.Updateable(item).IgnoreColumns(ignoreAllNullColumns: true).ExecuteCommandAsync();
+            return "success";
+        }
 
         /// <summary>
         /// 获取SQL查询结果
         /// </summary>
         /// <param name="sql"></param>
         /// <returns></returns>
-        public async Task<List<dynamic>>  GetSqlResult(string sql)
+        public async Task<List<dynamic>> GetSqlResult(string sql)
         {
             // 检查SQL语句是否符合条件
             if (IsInvalidSql(sql))
@@ -73,8 +178,8 @@ namespace BenXinLims.Application.Template
             var selectStarPatterns = new[]
             {
             @"^\s*select\s+\*\s+from\s+\w+\s*;",
-    @"^\s*select\s+\*\s+from\s+\w+\s*$",
-    @"^\s*select\s+\*\s+from\s+\w+\s+where\s+.*"
+            @"^\s*select\s+\*\s+from\s+\w+\s*$",
+            @"^\s*select\s+\*\s+from\s+\w+\s+where\s+.*"
         };
 
             // 检查是否是删除、更新、插入语句

@@ -1018,6 +1018,11 @@
             数据库表结构
             </summary>
         </member>
+        <member name="T:BenXinLims.Application.Template.templateQueryDto">
+            <summary>
+            模板查询dto
+            </summary>
+        </member>
         <member name="T:BenXinLims.Application.Template.templateServices">
             <summary>
             模板服务
@@ -1028,6 +1033,55 @@
             获取数据库表结构
             </summary>
             <param name="tableName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Application.Template.templateServices.GetTemplateList(BenXinLims.Application.Template.templateQueryDto)">
+            <summary>
+            查询模板条件
+            </summary>
+            <param name="queryDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Application.Template.templateServices.AddTemplate(BenXinLims.Application.Template.TemplateEntry)">
+            <summary>
+            添加模板
+            </summary>
+            <param name="template"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Application.Template.templateServices.DeleteTemplate(System.String)">
+            <summary>
+            删除模板
+            </summary>
+            <param name="templateName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Application.Template.templateServices.UpdateTemplate(BenXinLims.Application.Template.TemplateEntry)">
+            <summary>
+            更新模板
+            </summary>
+            <param name="template"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Application.Template.templateServices.GetTemplateItemList(System.String)">
+            <summary>
+            获取模板分项值
+            </summary>
+            <param name="templateName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Application.Template.templateServices.UpdateTemplateItemList(System.Collections.Generic.List{BenXinLims.Application.Template.TemplateItemEntry})">
+            <summary>
+            插入模板分析
+            </summary>
+            <param name="items"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BenXinLims.Application.Template.templateServices.UpdateTemplateItem(BenXinLims.Application.Template.TemplateItemEntry)">
+            <summary>
+            更新模板分析
+            </summary>
+            <param name="item"></param>
             <returns></returns>
         </member>
         <member name="M:BenXinLims.Application.Template.templateServices.GetSqlResult(System.String)">
