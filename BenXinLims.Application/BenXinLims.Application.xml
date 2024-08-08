@@ -958,6 +958,11 @@
              描述信息 
             </summary>
         </member>
+        <member name="P:BenXinLims.Application.Template.TemplateEntry.Status">
+             <summary>
+             状态 
+            </summary>
+        </member>
         <member name="T:BenXinLims.Application.Template.TemplateItemEntry">
              <summary>
              模板分项实体类

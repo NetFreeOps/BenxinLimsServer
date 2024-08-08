@@ -70,7 +70,7 @@ namespace BenXinLims.Application.Template
         /// <summary>
         /// 字段类型 
         ///</summary>
-        [SugarColumn(ColumnName = "fiele_type")]
+        [SugarColumn(ColumnName = "field_type")]
         public string FieleType { get; set; }
         /// <summary>
         /// 默认值 
