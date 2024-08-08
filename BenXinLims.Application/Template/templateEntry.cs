@@ -33,6 +33,11 @@ namespace BenXinLims.Application.Template
         ///</summary>
         [SugarColumn(ColumnName = "description")]
         public string Description { get; set; }
+        /// <summary>
+        /// 状态 
+        ///</summary>
+        [SugarColumn(ColumnName = "status")]
+        public string Status { get; set; }
         
     }
 
