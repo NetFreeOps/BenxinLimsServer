@@ -1,0 +1,1 @@
+import{openBlock as e,createElementBlock as t,createElementVNode as n}from"vue";import{_ as o}from"./app-Y3nPrZJQ.js";const c={},_=n("p",null,"样品函 数",-1),l=[_];function r(s,m){return e(),t("div",null,l)}const f=o(c,[["render",r],["__file","sampleFunction.html.vue"]]);export{f as default};

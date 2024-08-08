@@ -1,0 +1,1 @@
+import{openBlock as t,createElementBlock as e}from"vue";import{_ as r}from"./app-Y3nPrZJQ.js";const c={};function o(_,n){return t(),e("div")}const i=r(c,[["render",o],["__file","quickStart.html.vue"]]);export{i as default};
